@@ -27,7 +27,7 @@ if (!reduceMotion) {
 
 /* ---------------------------------------------------------------
    Loading screen: the amber logo fills from the bottom like water, 0 to 100, then the screen lifts away.
-   The hero intro waits for it (window.__preloaded). It plays once per visit; the page head decides whether to skip it.
+   The hero intro waits for it (window.__preloaded). It plays on arrival and refresh; the page head decides whether to skip it.
 ---------------------------------------------------------------- */
 let preResolve = () => {};
 window.__preloaded = new Promise((resolve) => (preResolve = resolve));
@@ -38,9 +38,6 @@ window.__preloaded = new Promise((resolve) => (preResolve = resolve));
     preResolve();
     return;
   }
-  try {
-    sessionStorage.setItem("mfd-pre", "1");
-  } catch (e) {}
   if (lenis) lenis.stop();
   window.scrollTo(0, 0);
 
@@ -80,27 +77,27 @@ window.__preloaded = new Promise((resolve) => (preResolve = resolve));
   });
   const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
   const slowFill = new Promise((resolve) => {
-    gsap.to(state, { v: 0.9, duration: 2.2, ease: "power1.inOut", onComplete: resolve });
+    gsap.to(state, { v: 0.9, duration: 1.2, ease: "power1.inOut", onComplete: resolve });
   });
-  const giveUp = new Promise((resolve) => setTimeout(resolve, 5500));
+  const giveUp = new Promise((resolve) => setTimeout(resolve, 4000));
 
   Promise.race([Promise.all([loaded, fonts, slowFill]), giveUp]).then(() => {
     gsap.to(state, {
       v: 1,
-      duration: 0.75,
+      duration: 0.5,
       ease: "power2.inOut",
       onComplete: () => {
         gsap.ticker.remove(wave);
         fillA.style.clipPath = "none";
         fillB.style.clipPath = "none";
         num.textContent = "100";
-        const out = gsap.timeline({ delay: 0.35 });
+        const out = gsap.timeline({ delay: 0.15 });
         out
           .to(pre.querySelector(".pl-count"), { yPercent: 30, autoAlpha: 0, duration: 0.5, ease: "power2.in" }, 0)
           .to(pre.querySelector(".pl-label"), { autoAlpha: 0, duration: 0.3 }, 0)
           .to(pre.querySelector(".pl-logo"), { scale: 0.94, duration: 0.7, ease: "power2.in" }, 0)
-          .to(pre, { clipPath: "inset(0 0 100% 0)", duration: 1, ease: "expo.inOut" }, 0.35)
-          .add(() => preResolve(), 0.75)
+          .to(pre, { clipPath: "inset(0 0 100% 0)", duration: 0.85, ease: "expo.inOut" }, 0.3)
+          .add(() => preResolve(), 0.6)
           .add(() => {
             root.classList.add("no-pre");
             pre.remove();
@@ -1233,8 +1230,9 @@ if (orbEl && slotA && slotB && stage && pricingEl && createCrystalizedBall) {
 
 /* ---------------------------------------------------------------
    11. Contact form: custom dropdowns, validation, and sending.
-   Set data-endpoint on the form to a form service URL (Formspree, Web3Forms and similar) to post the
-   enquiry there. Without one, the message opens in the visitor's email app, addressed to data-email.
+   Messages are saved to Supabase when data-supabase-url and data-supabase-key are set (Contact.astro fills them from
+   PUBLIC_SUPABASE_URL and PUBLIC_SUPABASE_ANON_KEY). data-endpoint can post to a form service instead. With neither,
+   the message opens in the visitor's email app, addressed to data-email.
 ---------------------------------------------------------------- */
 const cform = document.querySelector("[data-cform]");
 if (cform) {
@@ -1381,21 +1379,57 @@ if (cform) {
     if (data.company_site) return; // the hidden trap field: a person leaves it empty
     delete data.company_site;
     const endpoint = cform.dataset.endpoint;
-    if (endpoint) {
+    const sbUrl = (cform.dataset.supabaseUrl || "").replace(/\/$/, "");
+    const sbKey = cform.dataset.supabaseKey || "";
+    const mail = cform.dataset.email;
+    if ((sbUrl && sbKey) || endpoint) {
       submit.disabled = true;
       say("Sending…");
       try {
-        const res = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
-        if (!res.ok) throw new Error(String(res.status));
+        let res;
+        if (sbUrl && sbKey) {
+          // Supabase: one row in the "inquiries" table (see supabase/migrations). The public key can only add rows, never read them.
+          const row = {
+            name: data.name.trim(),
+            email: data.email.trim(),
+            business: (data.business || "").trim() || null,
+            website: (data.website || "").trim() || null,
+            project: data.project,
+            budget: data.budget || null,
+            timeline: data.timeline,
+            message: data.message.trim(),
+            source_page: location.pathname,
+          };
+          res = await fetch(sbUrl + "/rest/v1/inquiries", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", apikey: sbKey, Authorization: "Bearer " + sbKey, Prefer: "return=minimal" },
+            body: JSON.stringify(row),
+          });
+        } else {
+          res = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+        }
+        if (!res.ok) {
+          const detail = await res.text().catch(() => "");
+          const err = new Error(String(res.status));
+          err.limited = /too many/i.test(detail);
+          throw err;
+        }
+        const first = data.name.trim().split(/\s+/)[0];
         cform.reset();
         cform.querySelectorAll(".dd-val").forEach((v) => {
           v.textContent = v.dataset.ph;
           v.classList.add("is-empty");
         });
         cform.querySelectorAll('[role="option"]').forEach((o) => o.setAttribute("aria-selected", "false"));
-        say("Thank you. Your message is in, and I will reply by email with a clear next step.");
+        status.classList.remove("is-error");
+        status.textContent = "Message received, " + first + ". I will go through the details and reply to " + data.email.trim() + " personally.";
+        if (window.fbq) window.fbq("track", "Lead");
       } catch (err) {
-        say('That did not send. Please try again, or email <a href="mailto:' + cform.dataset.email + '">' + cform.dataset.email + "</a>.", true);
+        if (err && err.limited) {
+          say("You have sent a few messages in a short time. They have all reached me, and I will reply to the address you gave.");
+        } else {
+          say('That did not go through. Try again in a moment, or email <a href="mailto:' + mail + '">' + mail + "</a>.", true);
+        }
       }
       submit.disabled = false;
     } else {
@@ -1410,9 +1444,9 @@ if (cform) {
         "",
         data.message,
       ];
-      const href = "mailto:" + cform.dataset.email + "?subject=" + encodeURIComponent("New project enquiry from " + data.name) + "&body=" + encodeURIComponent(lines.join("\n"));
+      const href = "mailto:" + mail + "?subject=" + encodeURIComponent("New project enquiry from " + data.name) + "&body=" + encodeURIComponent(lines.join("\n"));
       window.location.href = href;
-      say('Your email app should open with the message ready to send. If it does not, write to <a href="mailto:' + cform.dataset.email + '">' + cform.dataset.email + "</a>.");
+      say('Your email app should open with the message ready to send. If it does not, write to <a href="mailto:' + mail + '">' + mail + "</a>.");
     }
   });
 

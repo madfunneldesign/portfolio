@@ -28,3 +28,14 @@ npm run build     # writes dist/
 - Do not turn on Astro's page transitions (ClientRouter): the loading screen and scroll animations expect a normal page load.
 - To change the nav links, edit `src/components/Nav.astro` (and `Footer.astro` for the footer list).
 - The FAQ text lives in `src/pages/faq.astro` and in the FAQ section of `src/pages/index.astro`; the FAQ structured data is next to each.
+
+## Contact form and Supabase
+Messages from the contact form are saved to a Supabase table called `inquiries`.
+1. The table, its security rules and a spam limit (3 messages per email per hour) are in `supabase/migrations/`. With the Supabase GitHub integration on, pushing to `main` applies them; otherwise paste the file into Supabase > SQL Editor and run it once.
+2. In Vercel > Project > Settings > Environment Variables add `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` (both under Supabase > Project Settings > API; see `.env.example`), then redeploy.
+3. Read the messages in Supabase > Table Editor > `inquiries`. Use the `status` and `notes` columns to track your follow-up.
+The anon key is public by design. The table only lets it add a message: it cannot read, edit or delete anything. Until the two variables are set, the form falls back to opening the visitor's email app.
+
+## Loading screen and analytics
+- The loading screen plays on arrival and refresh, and is skipped when moving between pages, for reduced motion, and for links that land on a section. Add `?preloader` to an address to force it.
+- Google Analytics, Clarity and the Meta Pixel start on the first touch, scroll or key press, or 5 seconds after load, so they stay out of the way of the first paint and the PageSpeed score.

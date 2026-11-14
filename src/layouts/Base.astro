@@ -24,16 +24,22 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
   <!-- Marks the page as JS-enabled so hero text can animate in. If scripts fail, the text shows after 4 seconds. -->
   <script is:inline>
     document.documentElement.classList.add("js");
-    try {
-      // The loading screen plays once per visit. It is skipped for reduced motion and for links that land on a section.
-      // Adding ?preloader to the address plays it again (handy for testing); reduced motion is always respected.
-      var force = /[?&]preloader(=|&|$)/.test(location.search);
-      if (matchMedia("(prefers-reduced-motion: reduce)").matches || (!force && (sessionStorage.getItem("mfd-pre") || location.hash))) {
+    (function () {
+      try {
+        // The loading screen plays when someone arrives or refreshes. It is skipped when moving between pages of the site,
+        // for reduced motion, and for links that land on a section. Add ?preloader to the address to force it (reduced motion still wins).
+        var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+        var reloaded = !!nav && nav.type === "reload";
+        var fromSite = false;
+        try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e2) {}
+        var force = /[?&]preloader(=|&|$)/.test(location.search);
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches || (!force && ((fromSite && !reloaded) || location.hash))) {
+          document.documentElement.classList.add("no-pre");
+        }
+      } catch (e) {
         document.documentElement.classList.add("no-pre");
       }
-    } catch (e) {
-      document.documentElement.classList.add("no-pre");
-    }
+    })();
     window.__revealFallback = setTimeout(function () {
       document.documentElement.classList.add("reveal-fallback");
     }, document.documentElement.classList.contains("no-pre") ? 4000 : 10000);
@@ -41,37 +47,49 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
 
   <slot name="jsonld" />
 
-  <!-- Analytics. All three load asynchronously, so they do not hold up the page. -->
-  <!-- Google tag (gtag.js) -->
-  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KMTM0S15G4"></script>
+  <!-- Analytics: Google tag, Microsoft Clarity and Meta Pixel. They start after the page has loaded (on the first touch, scroll or key press, or 5 seconds after load),
+       so they do not compete with the first paint. -->
   <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KMTM0S15G4');
+    (function () {
+      var started = false;
+      function startTrackers() {
+        if (started) return;
+        started = true;
+        // Google tag (gtag.js)
+        var g = document.createElement("script");
+        g.async = true;
+        g.src = "https://www.googletagmanager.com/gtag/js?id=G-KMTM0S15G4";
+        document.head.appendChild(g);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KMTM0S15G4');
+
+        // Microsoft Clarity
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vpbr5gjf7k");
+
+        // Meta Pixel
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1454874593031556');
+        fbq('track', 'PageView');
+      }
+      ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (t) {
+        window.addEventListener(t, startTrackers, { once: true, passive: true });
+      });
+      window.addEventListener("load", function () { setTimeout(startTrackers, 5000); });
+    })();
   </script>
-  <!-- Microsoft Clarity -->
-  <script is:inline type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "vpbr5gjf7k");
-  </script>
-  <!-- Meta Pixel Code -->
-  <script is:inline>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1454874593031556');
-    fbq('track', 'PageView');
-  </script>
-  <!-- End Meta Pixel Code -->
 </head>
 <body class={bodyClass || undefined}>
   <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1454874593031556&ev=PageView&noscript=1"></noscript>

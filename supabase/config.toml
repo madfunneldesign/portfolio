@@ -1,0 +1,9 @@
+# Supabase project settings for the MAD Funnel Design site.
+# The GitHub integration reads supabase/migrations and applies them to your project.
+project_id = "madfunneldesign"
+
+[api]
+enabled = true
+
+[db]
+major_version = 15
