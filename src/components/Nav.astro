@@ -1,19 +1,19 @@
 ---
-const { current = "", home = "index.html" } = Astro.props;
+const { current = "", home = "/" } = Astro.props;
 ---
 <header class="nav" data-nav>
     <div class="nav-bar">
-      <a class="brand" href="index.html" aria-label="MAD Funnel Design, home">
+      <a class="brand" href="/" aria-label="MAD Funnel Design, home">
         <img class="logo logo-dark" src="assets/img/logo-dark.webp" alt="" width="320" height="320" decoding="async">
         <img class="logo logo-color" src="assets/img/logo-color.webp" alt="" width="320" height="320" decoding="async">
       </a>
 
       <nav class="nav-links" aria-label="Main">
-        <a href="about.html" aria-current={current === "about" ? "page" : undefined}>About</a>
-        <a href="services.html" aria-current={current === "services" ? "page" : undefined}>Services</a>
-        <a href="projects.html" aria-current={current === "projects" ? "page" : undefined}>Projects</a>
-        <a href="faq.html" aria-current={current === "faq" ? "page" : undefined}>FAQ&rsquo;s</a>
-        <a href="contact.html" aria-current={current === "contact" ? "page" : undefined}>Contact</a>
+        <a href="/about" aria-current={current === "about" ? "page" : undefined}>About</a>
+        <a href="/services" aria-current={current === "services" ? "page" : undefined}>Services</a>
+        <a href="/projects" aria-current={current === "projects" ? "page" : undefined}>Projects</a>
+        <a href="/faq" aria-current={current === "faq" ? "page" : undefined}>FAQ&rsquo;s</a>
+        <a href="/contact" aria-current={current === "contact" ? "page" : undefined}>Contact</a>
       </nav>
 
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-btn>
@@ -26,13 +26,13 @@ const { current = "", home = "index.html" } = Astro.props;
   <div class="menu" id="menu" data-menu data-lenis-prevent role="dialog" aria-modal="true" aria-label="Menu" inert>
     <div class="menu-inner">
       <nav class="menu-links" aria-label="Menu">
-        <a href="services.html"><span data-m>Services</span></a>
+        <a href="/services"><span data-m>Services</span></a>
         <a href={`${home}#pricing`}><span data-m>Pricing</span></a>
-        <a href="projects.html"><span data-m>Projects</span></a>
-        <a href="about.html"><span data-m>About</span></a>
-        <a href="faq.html"><span data-m>FAQ&rsquo;s</span></a>
+        <a href="/projects"><span data-m>Projects</span></a>
+        <a href="/about"><span data-m>About</span></a>
+        <a href="/faq"><span data-m>FAQ&rsquo;s</span></a>
         <a href="https://www.madfunneldesign.com/brand-identity-system-30-minutes"><span data-m>Brand System</span></a>
-        <a href="contact.html"><span data-m>Contact</span></a>
+        <a href="/contact"><span data-m>Contact</span></a>
       </nav>
 
       <aside class="menu-pricing" aria-labelledby="menu-pricing-title">
@@ -47,8 +47,8 @@ const { current = "", home = "index.html" } = Astro.props;
       </aside>
 
       <div class="menu-foot">
-        <a href="terms.html" data-m>Terms &amp; Conditions</a>
-        <a href="privacy.html" data-m>Privacy Policy</a>
+        <a href="/terms" data-m>Terms &amp; Conditions</a>
+        <a href="/privacy" data-m>Privacy Policy</a>
         <a href="tel:+639064888321" data-m>+63 906 488 8321</a>
         <p data-m><span>Manila, PH</span> <time data-clock datetime="">--:--</time></p>
       </div>
