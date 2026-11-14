@@ -1,6 +1,6 @@
-# MAD Funnel Design (Astro)
+# MAD Funnel Design 
 
-Same site as before, now built with Astro. Every page looks and behaves the same; the nav, menu, footer, loading screen and
+Same site as before, Every page looks and behaves the same; the nav, menu, footer, loading screen and
 `<head>` setup are shared so a change is made once.
 
 ## Deploy on Vercel
