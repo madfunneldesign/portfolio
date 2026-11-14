@@ -1422,7 +1422,7 @@ if (cform) {
         });
         cform.querySelectorAll('[role="option"]').forEach((o) => o.setAttribute("aria-selected", "false"));
         status.classList.remove("is-error");
-        status.textContent = "Message received, " + first + ". I will go through the details and reply to " + data.email.trim() + " personally.";
+        status.textContent = "Well, that’s one step closer. I’ve got your message, " + first + ". Thanks for taking the time to send it over.";
         if (window.fbq) window.fbq("track", "Lead");
       } catch (err) {
         if (err && err.limited) {
