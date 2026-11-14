@@ -1402,7 +1402,7 @@ if (cform) {
           };
           res = await fetch(sbUrl + "/rest/v1/inquiries", {
             method: "POST",
-            headers: { "Content-Type": "application/json", apikey: sbKey, Authorization: "Bearer " + sbKey, Prefer: "return=minimal" },
+            headers: Object.assign({ "Content-Type": "application/json", apikey: sbKey, Prefer: "return=minimal" }, sbKey.indexOf("eyJ") === 0 ? { Authorization: "Bearer " + sbKey } : {}), // newer sb_publishable_ keys go in apikey only
             body: JSON.stringify(row),
           });
         } else {
