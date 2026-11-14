@@ -277,7 +277,7 @@ const playIntro = () => {
   }
 
   // Order: the nav, the four black bars, the title line by line, the tagline, then the copy and the buttons.
-  const split = SplitText.create(heroLines, { type: "lines", mask: "lines", linesClass: "split-line" });
+  const split = SplitText.create(heroLines, { type: "lines", mask: "lines", linesClass: "split-line", aria: "none" });
   gsap.set(heroTitle, { autoAlpha: 1 });
 
   const tl = gsap.timeline({
@@ -310,6 +310,7 @@ if (!reduceMotion) {
   document.querySelectorAll(".services h2, .service-name, .pricing h2, .package h3, .ab h2").forEach((heading) => {
     SplitText.create(heading, {
       type: "lines",
+      aria: "none", // the text stays readable as lines; an aria-label on a span is not allowed
       mask: "lines",
       autoSplit: true, // re-splits if the font loads late or the width changes
       onSplit(self) {
@@ -441,7 +442,7 @@ if (workEl && workStage && slides.length >= 3 && !reduceMotion) {
   // Text for each slide. Everything starts hidden; the active slide's text drops in.
   const parts = slides.map((slide) => {
     const title = SplitText.create(slide.querySelector(".slide-title"), { type: "words,chars" });
-    const desc = SplitText.create(slide.querySelector(".slide-desc"), { type: "words" });
+    const desc = SplitText.create(slide.querySelector(".slide-desc"), { type: "words", aria: "none" });
     const rest = [".slide-count", ".slide-sector", ".slide-meta", ".slide-link"].map((s) => slide.querySelector(s));
     gsap.set([title.chars, desc.words, rest], { autoAlpha: 0 });
     return { chars: title.chars, words: desc.words, rest };
@@ -735,7 +736,7 @@ if (voicesEl && wheel && figures.length > 1) {
     meta.lastChild.textContent = role;
     btn.appendChild(meta);
     wheel.appendChild(btn);
-    const words = SplitText.create(el.querySelector(".voice-quote p"), { type: "words" }).words;
+    const words = SplitText.create(el.querySelector(".voice-quote p"), { type: "words", aria: "none" }).words;
     return { el, btn, meta, words, by: el.querySelector(".voice-by") };
   });
 
