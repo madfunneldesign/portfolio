@@ -579,7 +579,7 @@ if (processEl && !reduceMotion) {
     })
     .from(".gantt-grid i", { scaleY: 0, transformOrigin: "top", duration: 1.2, stagger: 0.05 }, 0)
     .from(".gantt-nums span", { autoAlpha: 0, y: 10, duration: 0.8, stagger: 0.04 }, 0.25)
-    .from(".bar", { clipPath: "inset(0 100% 0 0)", duration: 1.3, stagger: 0.2 }, 0.35)
+    .from(".bar", { clipPath: "inset(0 100% 0 0)", duration: 1.3, stagger: 0.2, clearProps: "clipPath" }, 0.35)
     .from(".bar > span", { autoAlpha: 0, x: -14, duration: 0.9, stagger: 0.1 }, 0.9);
 
   gsap.from(".step", {

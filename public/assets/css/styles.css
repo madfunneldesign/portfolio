@@ -1661,8 +1661,33 @@ html.lenis body {
   text-align: center;
 }
 @media (max-width: 719px) {
+  /* The bars are too narrow to hold their names on a phone, so each name sits above its bar. */
+  .bar,
+  .bar:nth-child(2),
+  .bar:nth-child(3),
+  .bar:nth-child(4) {
+    display: block;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+    background: none;
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+  .bar::after {
+    content: "";
+    display: block;
+    height: 30px;
+    background: #fdba74;
+  }
+  .bar:nth-child(2)::after { background: #f8cf80; }
+  .bar:nth-child(3)::after { background: #EFA831; }
+  .bar:nth-child(4)::after { background: #c98412; }
   .bar-long {
-    display: none;
+    display: block;
+    padding: 0 0 7px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
   }
   .gantt-nums {
     font-size: 0.6rem;
