@@ -1,0 +1,387 @@
+---
+import Base from "../layouts/Base.astro";
+import Contact from "../components/Contact.astro";
+---
+<Base bodyClass="page-about page-services" current="services">
+<Fragment slot="meta">
+<title>Website, Funnel, CRM &amp; SEO Services for Coaches | MAD Funnel Design</title>
+  <meta name="description" content="Website design, landing pages and sales funnels, CRM integration and marketing automation, search visibility foundations and custom front-end development for coaches and service businesses.">
+  <link rel="canonical" href="https://www.madfunneldesign.com/services.html">
+  <meta name="author" content="Aldrich Matthew Domingo">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#1C1C1C">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAD Funnel Design">
+  <meta property="og:url" content="https://www.madfunneldesign.com/services.html">
+  <meta property="og:title" content="Services | MAD Funnel Design">
+  <meta property="og:description" content="Websites, funnels, CRM automation, search visibility foundations and custom front-end development, built around your business.">
+  <meta property="og:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MAD Funnel Design: website and funnel design for coaches and service businesses">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services | MAD Funnel Design">
+  <meta name="twitter:description" content="Websites, funnels and automation built around your business.">
+  <meta name="twitter:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+</Fragment>
+<Fragment slot="jsonld">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.madfunneldesign.com/services.html#page",
+      "url": "https://www.madfunneldesign.com/services.html",
+      "name": "Services",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://www.madfunneldesign.com/#website" }
+    },
+    {"@type": "Service", "@id": "https://www.madfunneldesign.com/services.html#website-design", "name": "Website design & development", "description": "Your website should explain the business before someone has to ask.", "serviceType": "Website design & development", "provider": {"@id": "https://www.madfunneldesign.com/#business"}, "areaServed": "Worldwide", "url": "https://www.madfunneldesign.com/services.html#website-design"},
+    {"@type": "Service", "@id": "https://www.madfunneldesign.com/services.html#landing-pages-funnels", "name": "Landing pages & sales funnels", "description": "Give one offer a clear place to do its job.", "serviceType": "Landing pages & sales funnels", "provider": {"@id": "https://www.madfunneldesign.com/#business"}, "areaServed": "Worldwide", "url": "https://www.madfunneldesign.com/services.html#landing-pages-funnels"},
+    {"@type": "Service", "@id": "https://www.madfunneldesign.com/services.html#crm-marketing-automation", "name": "CRM integration & marketing automation", "description": "An inquiry shouldn’t disappear after someone submits a form.", "serviceType": "CRM integration & marketing automation", "provider": {"@id": "https://www.madfunneldesign.com/#business"}, "areaServed": "Worldwide", "url": "https://www.madfunneldesign.com/services.html#crm-marketing-automation"},
+    {"@type": "Service", "@id": "https://www.madfunneldesign.com/services.html#search-visibility", "name": "Search visibility foundations", "description": "Make your website easier to find, understand, and navigate.", "serviceType": "Search visibility foundations", "provider": {"@id": "https://www.madfunneldesign.com/#business"}, "areaServed": "Worldwide", "url": "https://www.madfunneldesign.com/services.html#search-visibility"},
+    {"@type": "Service", "@id": "https://www.madfunneldesign.com/services.html#custom-front-end-development", "name": "Custom front-end development", "description": "When the standard components aren’t enough.", "serviceType": "Custom front-end development", "provider": {"@id": "https://www.madfunneldesign.com/#business"}, "areaServed": "Worldwide", "url": "https://www.madfunneldesign.com/services.html#custom-front-end-development"},
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.madfunneldesign.com/services.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of businesses do you work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I work with coaches, consultants, and service-based businesses that need websites, landing pages, sales funnels, or connected marketing systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What platforms do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I work with Systeme.io, GoHighLevel, and Shopify, alongside custom HTML, CSS, and JavaScript development. The platform depends on the project’s requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you connect my website to a CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. I can connect website forms and landing pages to supported CRM platforms, configure lead organization, and set up automated workflows. The exact integration depends on the platform and available account access."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide SEO and AI search optimization?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I provide foundational on-page SEO and technical setup, including page metadata, content structure, internal linking, crawlability checks, and relevant structured data. I also organize content so that its subject and answers are easier for AI-powered search systems to interpret. These improvements do not guarantee rankings or AI citations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a website or funnel cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pricing depends on the number of pages, design requirements, functionality, integrations, and overall project scope. You can review the available starting prices in the pricing section of my website."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with businesses outside the Philippines?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. I’m based in the Philippines and work with businesses internationally through online communication and project collaboration."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.madfunneldesign.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.madfunneldesign.com/services.html" }
+      ]
+    }
+  ]
+}
+  </script>
+</Fragment>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-down-right" viewBox="0 0 24 24"><path d="M5 5l13 13M18 8v10H8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
+
+    <section class="hero hero-about hero-services" aria-labelledby="services-title">
+      <span class="hbar hbar-1" aria-hidden="true"></span>
+      <span class="hbar hbar-2" aria-hidden="true"></span>
+      <span class="hbar hbar-3" aria-hidden="true"></span>
+      <span class="hbar hbar-4" aria-hidden="true"></span>
+
+      <div class="ah-copy">
+        <p class="ah-label" data-reveal>Services</p>
+        <h1 id="services-title" data-speakable>
+          <span class="line">Websites,</span>
+          <span class="line">Funnels &amp;</span>
+          <span class="line">Automation</span>
+          <span class="hero-tag">Built around your business.</span>
+        </h1>
+        <p class="ah-intro" data-reveal data-speakable>I design and develop business websites, landing pages, sales funnels, and connected marketing systems for coaches and service-based businesses.</p>
+      </div>
+
+      <nav class="svc-index" aria-label="The five services">
+        <ol>
+          <li data-reveal><a href="#website-design"><span class="si-n">01</span><span class="si-t">Website design &amp; development</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+          <li data-reveal><a href="#landing-pages-funnels"><span class="si-n">02</span><span class="si-t">Landing pages &amp; sales funnels</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+          <li data-reveal><a href="#crm-marketing-automation"><span class="si-n">03</span><span class="si-t">CRM integration &amp; marketing automation</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+          <li data-reveal><a href="#search-visibility"><span class="si-n">04</span><span class="si-t">Search visibility foundations</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+          <li data-reveal><a href="#custom-front-end-development"><span class="si-n">05</span><span class="si-t">Custom front-end development</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <section class="ab ab-dark" id="overview" aria-labelledby="overview-title">
+      <div class="ab-in ab-split">
+        <header class="ab-head">
+          <p class="ab-k" data-rise>Overview</p>
+          <h2 id="overview-title">The work starts with what your business needs.</h2>
+        </header>
+        <div class="ab-body">
+          <p class="ab-lead" data-rise data-speakable>Not a fixed package of features.</p>
+          <p data-rise>Some projects need a complete website. Others need a better landing page, a more organized way to handle inquiries, or custom functionality that an off-the-shelf template cannot provide.</p>
+        </div>
+      </div>
+
+      <ul class="need-grid" aria-label="Where do you need help?">
+        <li data-rise><a href="#website-design"><span class="need-k">You need</span><span class="need-t">A complete website</span><span class="need-l">Website design &amp; development <svg width="18" height="18" aria-hidden="true"><use href="#i-down-right"/></svg></span></a></li>
+        <li data-rise><a href="#landing-pages-funnels"><span class="need-k">Or you need</span><span class="need-t">A better landing page</span><span class="need-l">Landing pages &amp; sales funnels <svg width="18" height="18" aria-hidden="true"><use href="#i-down-right"/></svg></span></a></li>
+        <li data-rise><a href="#crm-marketing-automation"><span class="need-k">Or you need</span><span class="need-t">A more organized way to handle inquiries</span><span class="need-l">CRM integration &amp; automation <svg width="18" height="18" aria-hidden="true"><use href="#i-down-right"/></svg></span></a></li>
+        <li data-rise><a href="#custom-front-end-development"><span class="need-k">Or you need</span><span class="need-t">Custom functionality a template can&rsquo;t provide</span><span class="need-l">Custom front-end development <svg width="18" height="18" aria-hidden="true"><use href="#i-down-right"/></svg></span></a></li>
+      </ul>
+    </section>
+
+    <section class="ab svc ab-amber" id="website-design" aria-labelledby="website-design-title">
+      <span class="ab-bar ab-bar-l" aria-hidden="true"></span>
+      <span class="ab-bar ab-bar-r" aria-hidden="true"></span>
+      <div class="ab-in svc-grid">
+        <header class="svc-head">
+          <span class="svc-n" data-rise aria-hidden="true">01</span>
+          <h2 id="website-design-title">Website design &amp; development</h2>
+        </header>
+        <div class="svc-body">
+          <p class="svc-lead" data-rise data-speakable>Your website should explain the business before someone has to ask.</p>
+          <p data-rise>I design and develop custom business websites that give visitors a clear understanding of your services, what you offer, and how to contact you.</p>
+          <p data-rise>The focus is on the actual structure of the website: how information is arranged, how pages connect, and how the experience works across desktop and mobile devices.</p>
+          <h3 class="svc-k" data-rise>What can be included</h3>
+          <ul class="checks svc-checks">
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Custom page layouts and visual direction</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Homepage and individual service pages</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Responsive desktop, tablet, and mobile layouts</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Navigation and user-interface development</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Contact forms and inquiry pathways</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Platform setup and relevant integrations</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Basic on-page SEO setup</li>
+          </ul>
+          <div class="svc-for" data-rise>
+            <h3 class="svc-k">Suitable for</h3>
+            <p>Coaches, consultants, contractors, professional service providers, and businesses that need a more complete online presence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab svc ab-dark" id="landing-pages-funnels" aria-labelledby="landing-pages-funnels-title">
+      <div class="ab-in svc-grid">
+        <header class="svc-head">
+          <span class="svc-n" data-rise aria-hidden="true">02</span>
+          <h2 id="landing-pages-funnels-title">Landing pages &amp; sales funnels</h2>
+        </header>
+        <div class="svc-body">
+          <p class="svc-lead" data-rise data-speakable>Give one offer a clear place to do its job.</p>
+          <p data-rise>A landing page needs to do more than look like a smaller version of a website. It needs to present a specific offer, answer the questions a potential customer may have, and make the next action clear.</p>
+          <p data-rise>I build landing pages and sales funnels around the offer, audience, and intended customer journey.</p>
+          <h3 class="svc-k" data-rise>What can be included</h3>
+          <ul class="checks svc-checks">
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Offer and page-structure planning</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Landing page design and development</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Sales and lead-generation page layouts</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Lead capture and inquiry forms</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Thank-you and confirmation pages</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Booking or payment integrations where supported</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Follow-up workflow connections, when included in scope</li>
+          </ul>
+          <div class="svc-for" data-rise>
+            <h3 class="svc-k">Suitable for</h3>
+            <p>Coaches promoting programs, consultants generating inquiries, service businesses running campaigns, and businesses introducing a specific offer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab svc ab-white" id="crm-marketing-automation" aria-labelledby="crm-marketing-automation-title">
+      <div class="ab-in svc-grid">
+        <header class="svc-head">
+          <span class="svc-n" data-rise aria-hidden="true">03</span>
+          <h2 id="crm-marketing-automation-title">CRM integration &amp; marketing automation</h2>
+        </header>
+        <div class="svc-body">
+          <p class="svc-lead" data-rise data-speakable>An inquiry shouldn&rsquo;t disappear after someone submits a form.</p>
+          <p data-rise>When a potential customer contacts your business, the information needs somewhere to go and a clear next step.</p>
+          <p data-rise>I connect website forms and landing pages to CRM platforms and configure practical workflows that help organize incoming leads and handle follow-ups.</p>
+          <h3 class="svc-k" data-rise>What can be included</h3>
+          <ul class="checks svc-checks">
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Website form-to-CRM connections</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Lead capture and contact organization</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Tags and pipeline setup</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Automated email notifications</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Follow-up email workflows</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Appointment and booking integrations</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Connections through Zapier or Make, where appropriate</li>
+          </ul>
+          <div class="svc-for" data-rise>
+            <h3 class="svc-k">Suitable for</h3>
+            <p>Businesses receiving inquiries through multiple channels, service providers who manually follow up with leads, and teams that need a more organized contact-management process.</p>
+          </div>
+          <p class="svc-note" data-rise>Depending on the project, I work with platforms such as GoHighLevel and Systeme.io. Platform subscriptions, third-party services, and paid integrations are subject to the client&rsquo;s existing accounts and project requirements.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab svc ab-dark" id="search-visibility" aria-labelledby="search-visibility-title">
+      <div class="ab-in svc-grid">
+        <header class="svc-head">
+          <span class="svc-n" data-rise aria-hidden="true">04</span>
+          <h2 id="search-visibility-title">Search visibility foundations</h2>
+        </header>
+        <div class="svc-body">
+          <p class="svc-lead" data-rise data-speakable>Make your website easier to find, understand, and navigate.</p>
+          <p data-rise>Search visibility starts with a website that communicates its subject clearly to visitors and search engines.</p>
+          <p data-rise>I work on the on-page and technical foundations that help search systems understand your business, services, and website content. This includes conventional search and the growing use of AI-powered search experiences.</p>
+          <p data-rise>The objective is to make your business information clear, consistent, and accessible, not to fill pages with keywords or manufacture AI citations.</p>
+          <h3 class="svc-k" data-rise>What can be included</h3>
+          <ul class="checks svc-checks">
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Page titles and meta descriptions</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Heading structure and content organization</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Service-specific page content</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Internal linking between relevant pages</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Image descriptions and alternative text</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Crawlability and indexability checks</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Relevant structured data implementation</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Content organization for direct-answer queries and AI search understanding</li>
+          </ul>
+          <div class="svc-for" data-rise>
+            <h3 class="svc-k">Suitable for</h3>
+            <p>Businesses launching a new website, improving existing service pages, or addressing gaps in their search visibility foundations.</p>
+          </div>
+          <p class="svc-note" data-rise>Search rankings, traffic, AI citations, leads, and revenue are not guaranteed. Ongoing SEO campaigns, content production, and link-building require separate scope and agreement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab svc ab-amber" id="custom-front-end-development" aria-labelledby="custom-front-end-development-title">
+      <span class="ab-bar ab-bar-l" aria-hidden="true"></span>
+      <span class="ab-bar ab-bar-r" aria-hidden="true"></span>
+      <div class="ab-in svc-grid">
+        <header class="svc-head">
+          <span class="svc-n" data-rise aria-hidden="true">05</span>
+          <h2 id="custom-front-end-development-title">Custom front-end development</h2>
+        </header>
+        <div class="svc-body">
+          <p class="svc-lead" data-rise data-speakable>When the standard components aren&rsquo;t enough.</p>
+          <p data-rise>Some websites need more control over how an interface looks and behaves. I use custom front-end code to build sections, interactions, and motion that aren&rsquo;t easily achieved with standard platform components.</p>
+          <p data-rise>This work can be part of a complete website project or scoped as a specific development task.</p>
+          <p data-rise>I use animation where it supports the content and interaction, not simply to add movement to a page.</p>
+          <h3 class="svc-k" data-rise>What can be included</h3>
+          <ul class="checks svc-checks">
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Custom HTML, CSS, and JavaScript</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Interactive navigation and menus</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>GSAP-powered animations and transitions</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Scroll-based interactions</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Lenis smooth-scrolling implementation</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Custom responsive components</li>
+            <li data-rise><svg aria-hidden="true"><use href="#i-check"/></svg>Third-party embeds and interface integrations</li>
+          </ul>
+          <div class="svc-for" data-rise>
+            <h3 class="svc-k">Suitable for</h3>
+            <p>Businesses and brands that need a more tailored interface, distinctive interactions, or functionality beyond their website platform&rsquo;s standard options.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab ab-dark" id="scoping" aria-labelledby="scoping-title">
+      <div class="ab-in ab-split">
+        <header class="ab-head">
+          <p class="ab-k" data-rise>How projects are scoped</p>
+          <h2 id="scoping-title">Not every project needs the same setup.</h2>
+        </header>
+        <div class="ab-body">
+          <p data-rise>Before development begins, I look at the required pages, functionality, integrations, content, and platform.</p>
+          <p data-rise>A business website may need a different setup from a lead-generation funnel. A project involving CRM automation may also require access to third-party accounts and additional configuration.</p>
+          <p class="ab-strong" data-rise>Once the requirements are clear, the deliverables, timeline, platform, and project cost can be defined.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab ab-white" id="questions" aria-labelledby="questions-title">
+      <div class="ab-in">
+        <header class="ab-head ab-head-wide">
+          <p class="ab-k" data-rise>Common questions</p>
+          <h2 id="questions-title">What people ask before we start.</h2>
+        </header>
+        <div class="qa">
+          <div class="qa-row" data-rise>
+            <h3>What types of businesses do you work with?</h3>
+            <p>I work with coaches, consultants, and service-based businesses that need websites, landing pages, sales funnels, or connected marketing systems.</p>
+          </div>
+          <div class="qa-row" data-rise>
+            <h3>What platforms do you use?</h3>
+            <p>I work with Systeme.io, GoHighLevel, and Shopify, alongside custom HTML, CSS, and JavaScript development. The platform depends on the project&rsquo;s requirements.</p>
+          </div>
+          <div class="qa-row" data-rise>
+            <h3>Can you connect my website to a CRM?</h3>
+            <p>Yes. I can connect website forms and landing pages to supported CRM platforms, configure lead organization, and set up automated workflows. The exact integration depends on the platform and available account access.</p>
+          </div>
+          <div class="qa-row" data-rise>
+            <h3>Do you provide SEO and AI search optimization?</h3>
+            <p>I provide foundational on-page SEO and technical setup, including page metadata, content structure, internal linking, crawlability checks, and relevant structured data. I also organize content so that its subject and answers are easier for AI-powered search systems to interpret. These improvements do not guarantee rankings or AI citations.</p>
+          </div>
+          <div class="qa-row" data-rise>
+            <h3>How much does a website or funnel cost?</h3>
+            <p>Pricing depends on the number of pages, design requirements, functionality, integrations, and overall project scope. You can review the available starting prices in the <a href="index.html#pricing">pricing section</a> of my website.</p>
+          </div>
+          <div class="qa-row" data-rise>
+            <h3>Can you work with businesses outside the Philippines?</h3>
+            <p>Yes. I&rsquo;m based in the Philippines and work with businesses internationally through online communication and project collaboration.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab ab-amber ab-cta" id="lets-talk" aria-labelledby="talk-title">
+      <span class="ab-bar ab-bar-l" aria-hidden="true"></span>
+      <span class="ab-bar ab-bar-r" aria-hidden="true"></span>
+      <div class="ab-in">
+        <h2 id="talk-title">Have a project to discuss?</h2>
+        <div class="ab-cta-body">
+          <p class="ab-lead" data-rise>Tell me what you&rsquo;re looking to build, what isn&rsquo;t working, or what you need to connect.</p>
+          <p data-rise>I&rsquo;ll review the requirements and get back to you with a practical next step.</p>
+          <div class="ab-cta-actions" data-rise>
+            <a class="cta cta-solid" href="https://calendly.com/-aldrichmatthew/15mins"><span>Book Free Strategy Call</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="cta cta-ghost" href="#contact"><span>Send a Project Inquiry</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <dl class="cta-facts" data-rise>
+          <div><dt>Email</dt><dd><a href="mailto:madfunneldesign@gmail.com">madfunneldesign@gmail.com</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+639064888321">+63 906 488 8321</a></dd></div>
+          <div><dt>Based in</dt><dd>The Philippines, working with businesses worldwide</dd></div>
+          <div><dt>Local time</dt><dd>Manila <time data-clock datetime="">--:--</time></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <Contact />
+  
+</Base>

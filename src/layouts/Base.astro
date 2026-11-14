@@ -1,0 +1,59 @@
+---
+// One layout for every page. Page-specific search/social tags go in the "meta" slot,
+// structured data in the "jsonld" slot, and the page content in the default slot.
+import Preloader from "../components/Preloader.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+const { bodyClass = "", current = "", home = "index.html", ball = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <slot name="meta" />
+  <link rel="icon" href="favicon.png" type="image/png" sizes="120x120">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/host-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Marks the page as JS-enabled so hero text can animate in. If scripts fail, the text shows after 4 seconds. -->
+  <script is:inline>
+    document.documentElement.classList.add("js");
+    try {
+      // The loading screen plays once per visit. It is skipped for reduced motion and for links that land on a section.
+      if (sessionStorage.getItem("mfd-pre") || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("no-pre");
+      }
+    } catch (e) {
+      document.documentElement.classList.add("no-pre");
+    }
+    window.__revealFallback = setTimeout(function () {
+      document.documentElement.classList.add("reveal-fallback");
+    }, document.documentElement.classList.contains("no-pre") ? 4000 : 10000);
+  </script>
+
+  <slot name="jsonld" />
+</head>
+<body class={bodyClass || undefined}>
+  <Preloader />
+  <Nav current={current} home={home} />
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <Footer home={home} />
+
+  <!-- Animation libraries and site script are plain files in /public, loaded in the same order as before. -->
+  <script is:inline defer src="assets/vendor/gsap.min.js"></script>
+  <script is:inline defer src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script is:inline defer src="assets/vendor/SplitText.min.js"></script>
+  <script is:inline defer src="assets/vendor/lenis.min.js"></script>
+  {ball && <script is:inline defer src="assets/js/crystalized-ball.js"></script>}
+  <script is:inline defer src="assets/js/main.js"></script>
+</body>
+</html>

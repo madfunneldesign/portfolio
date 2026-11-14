@@ -1,0 +1,1029 @@
+---
+import Base from "../layouts/Base.astro";
+import Contact from "../components/Contact.astro";
+---
+<Base bodyClass="" current="" home="" ball>
+<Fragment slot="meta">
+<title>Website &amp; Funnel Designer for Coaches and Service Businesses | MAD Funnel Design</title>
+  <meta name="description" content="Custom websites, landing pages and sales funnels for coaches and service businesses, built with Systeme.io, GoHighLevel, Shopify or custom code. Packages start at $850 USD.">
+  <link rel="canonical" href="https://www.madfunneldesign.com/">
+  <meta name="author" content="Aldrich Matthew Domingo">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#1C1C1C">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAD Funnel Design">
+  <meta property="og:url" content="https://www.madfunneldesign.com/">
+  <meta property="og:title" content="Website &amp; Funnel Designer for Coaches and Service Businesses | MAD Funnel Design">
+  <meta property="og:description" content="Custom websites, landing pages and sales funnels for coaches and service businesses, built with Systeme.io, GoHighLevel, Shopify or custom code. Packages start at $850 USD.">
+  <meta property="og:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MAD Funnel Design: website and funnel design for coaches and service businesses">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website &amp; Funnel Designer for Coaches and Service Businesses | MAD Funnel Design">
+  <meta name="twitter:description" content="Custom websites, landing pages and sales funnels for coaches and service businesses. Packages start at $850 USD.">
+  <meta name="twitter:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+
+  <!-- Carried over from the current Systeme.io site so Pinterest keeps the domain verified. -->
+  <meta name="p:domain_verify" content="0a18bdfaf694961dbe646c53ad48d8ce">
+
+  <!-- Paths are relative so the page also opens by double-clicking index.html. -->
+</Fragment>
+<Fragment slot="jsonld">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.madfunneldesign.com/#website",
+      "url": "https://www.madfunneldesign.com/",
+      "name": "MAD Funnel Design",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://www.madfunneldesign.com/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.madfunneldesign.com/#webpage",
+      "url": "https://www.madfunneldesign.com/",
+      "name": "Website & Funnel Designer for Coaches and Service Businesses | MAD Funnel Design",
+      "isPartOf": {
+        "@id": "https://www.madfunneldesign.com/#website"
+      },
+      "about": {
+        "@id": "https://www.madfunneldesign.com/#business"
+      },
+      "inLanguage": "en",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "[data-speakable]"
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.madfunneldesign.com/#person",
+      "name": "Aldrich Matthew Domingo",
+      "alternateName": "Drich",
+      "jobTitle": "Website, Landing Page and Funnel Designer",
+      "url": "https://www.madfunneldesign.com/",
+      "email": "madfunneldesign@gmail.com",
+      "worksFor": {
+        "@id": "https://www.madfunneldesign.com/#business"
+      },
+      "sameAs": [
+        "https://www.facebook.com/AldrichMatthewDomingoOfficial/",
+        "https://www.instagram.com/drichmatthew/",
+        "https://www.tiktok.com/@madfunneldesign",
+        "https://www.linkedin.com/in/aldrich-matthew-domingo-a287672ab"
+      ],
+      "knowsAbout": [
+        "Website design",
+        "Landing page design",
+        "Sales funnel design",
+        "Conversion copywriting",
+        "Marketing automation",
+        "Systeme.io",
+        "GoHighLevel",
+        "Shopify"
+      ],
+      "image": "https://www.madfunneldesign.com/assets/img/aldrich-matthew.webp",
+      "description": "Website and funnel designer and developer based in the Philippines, working with coaches and service-based businesses worldwide.",
+      "homeLocation": {
+        "@type": "Country",
+        "name": "Philippines"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.madfunneldesign.com/#service-website",
+      "name": "Website Design & Development",
+      "description": "Custom websites built around your brand, services, and business requirements. From page structure and visual design to responsive development and technical setup.",
+      "provider": {
+        "@id": "https://www.madfunneldesign.com/#business"
+      },
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.madfunneldesign.com/#service-funnel",
+      "name": "Landing Page & Funnel Development",
+      "description": "Landing pages and sales funnels structured to communicate your offer, guide visitors through your sales process, and capture qualified enquiries.",
+      "provider": {
+        "@id": "https://www.madfunneldesign.com/#business"
+      },
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.madfunneldesign.com/#service-motion",
+      "name": "Custom Interactions & Motion Design",
+      "description": "Custom frontend interactions, GSAP animations, Lenis smooth scrolling, and JavaScript functionality that give your website more control over how content moves and responds.",
+      "provider": {
+        "@id": "https://www.madfunneldesign.com/#business"
+      },
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.madfunneldesign.com/#service-automation",
+      "name": "Marketing Automation & Integrations",
+      "description": "Connected forms, CRM pipelines, automated follow-ups, and customer workflows that reduce manual tasks and help businesses manage incoming leads.",
+      "provider": {
+        "@id": "https://www.madfunneldesign.com/#business"
+      },
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.madfunneldesign.com/#project-nicro",
+      "name": "NICRO spa website",
+      "description": "A website for NICRO, a specialist in high-nickel alloy components. It presents the company’s engineering, prototyping, custom manufacturing and reverse engineering services.",
+      "genre": "Industrial manufacturing",
+      "creator": {
+        "@id": "https://www.madfunneldesign.com/#person"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.madfunneldesign.com/#project-omega",
+      "name": "Omega website",
+      "description": "A website for OMEGA, a studio designing contemporary residential interiors. Full-screen imagery leads the page, with a clear route to request a consultation.",
+      "genre": "Interior design",
+      "creator": {
+        "@id": "https://www.madfunneldesign.com/#person"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://www.madfunneldesign.com/#project-empire",
+      "name": "Empire website",
+      "description": "A website for Empire, a residential and commercial construction company. A full-screen hero introduces the services, and a quote request sits in the navigation.",
+      "genre": "Construction",
+      "creator": {
+        "@id": "https://www.madfunneldesign.com/#person"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.madfunneldesign.com/#business",
+      "name": "MAD Funnel Design",
+      "url": "https://www.madfunneldesign.com/",
+      "description": "Custom websites, landing pages and sales funnels for coaches and service businesses, built with Systeme.io, GoHighLevel, Shopify or custom code.",
+      "email": "madfunneldesign@gmail.com",
+      "founder": {
+        "@id": "https://www.madfunneldesign.com/#person"
+      },
+      "areaServed": "Worldwide",
+      "priceRange": "$850–$4,500+",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website and funnel design packages",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 850,
+              "priceCurrency": "USD"
+            },
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Essentials",
+              "description": "A professional website or landing page with a clear structure, custom design, and essential functionality. Starting price; final quotes depend on scope and complexity.",
+              "provider": {
+                "@id": "https://www.madfunneldesign.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 2200,
+              "priceCurrency": "USD"
+            },
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web & Conversion",
+              "description": "A multi-page website (up to 5 pages) or defined sales funnel with a structured conversion journey, GSAP animation, Lenis smooth scrolling, CRM integration and up to 2 automation workflows. Starting price; final quotes depend on scope and complexity.",
+              "provider": {
+                "@id": "https://www.madfunneldesign.com/#business"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 4500,
+              "priceCurrency": "USD"
+            },
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Systems",
+              "description": "Custom development for established businesses: advanced website interactions, multi-step automation and connected marketing infrastructure. Starting price; final quotes depend on scope and complexity.",
+              "provider": {
+                "@id": "https://www.madfunneldesign.com/#business"
+              }
+            }
+          }
+        ]
+      },
+      "audience": [
+        {
+          "@type": "Audience",
+          "audienceType": "Coaches"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Consultants"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Creators"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Service businesses"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/AldrichMatthewDomingoOfficial/",
+        "https://www.instagram.com/drichmatthew/",
+        "https://www.tiktok.com/@madfunneldesign",
+        "https://www.linkedin.com/in/aldrich-matthew-domingo-a287672ab"
+      ],
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Lorenzo",
+            "jobTitle": "Industrial Business Owner"
+          },
+          "reviewBody": "We wanted something that looked more in line with the kind of work we do. The website now presents our products and services in a much clearer way. It's easier for people to understand what we offer without having to dig through too much information."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Christopher",
+            "jobTitle": "Contractor"
+          },
+          "reviewBody": "What I liked most was having everything in one place. People can see the type of work we handle, learn about our services, and get in touch without having to ask us for every little detail. It makes presenting the business a lot easier."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Janet",
+            "jobTitle": "Interior Designer"
+          },
+          "reviewBody": "I wanted the website to feel like an extension of my design work, not just another business website. The way the projects and images are presented makes a big difference. It feels much closer to the style I want people to associate with my work."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sean",
+            "jobTitle": "Solar Business Owner"
+          },
+          "reviewBody": "Solar can be difficult to explain to people who are just starting to look into it. Having the services laid out clearly makes it easier for visitors to understand what we do and what their next step could be. That's exactly what we needed from the website."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Jane",
+            "jobTitle": "Fitness Instructor"
+          },
+          "reviewBody": "Working with Aldrich helped me take an important step forward in my fitness career. He created a landing page that gave me a more professional online presence and made it easier for potential clients to find my services and send inquiries. I also appreciate that the page was set up to capture leads automatically, so I have a better way to connect with people interested in my fitness programs."
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.madfunneldesign.com/#process",
+      "name": "How a website or funnel project works, from brief to launch",
+      "description": "The four steps of a MAD Funnel Design website or funnel project, from understanding your business requirements to testing and launching a working solution.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Understand the Requirements",
+          "text": "We start by discussing your business, services, target audience, project goals, and technical requirements. This gives the project a clear direction before design and development begin.",
+          "url": "https://www.madfunneldesign.com/#step-01"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Plan the Structure & Design",
+          "text": "I map out the page structure, content hierarchy, user journey, and visual direction. The goal is to make your offer easy to understand and give visitors a clear path toward taking action.",
+          "url": "https://www.madfunneldesign.com/#step-02"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Develop & Connect",
+          "text": "I build the approved design using the appropriate platform and custom code where needed. This includes responsive layouts, interactive elements, forms, CRM connections, and marketing automations based on the project scope.",
+          "url": "https://www.madfunneldesign.com/#step-03"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Test & Launch",
+          "text": "Before launch, I check mobile and desktop layouts, links, forms, integrations, functionality, and performance. Once everything is ready, the website or funnel is deployed and handed over.",
+          "url": "https://www.madfunneldesign.com/#step-04"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json" id="faq-jsonld">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.madfunneldesign.com/#faq",
+  "url": "https://www.madfunneldesign.com/#faq",
+  "name": "Frequently asked questions about MAD Funnel Design",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://www.madfunneldesign.com/#webpage"
+  },
+  "about": {
+    "@id": "https://www.madfunneldesign.com/#business"
+  },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is MAD Funnel Design for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MAD Funnel Design is for coaches, consultants, creators and service-based businesses that need a website, landing page or sales funnel built around their offer. Aldrich Matthew designs and develops each project himself, from the page structure and visual design to the forms and automation behind it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a website or sales funnel cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Packages start at $850 USD for a single custom landing page. A multi-page website or defined sales funnel starts at $2,200, and a custom multi-page system for established businesses starts at $4,500. These are starting estimates; the final quote depends on scope and complexity. See the full package breakdown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in the $850 Web Essentials package?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Web Essentials covers one custom landing page with a conversion-focused structure, custom visual design, responsive desktop and mobile layouts, lead capture forms with basic integrations, basic on-page SEO setup, testing and deployment. Advanced GSAP and Lenis animation is available separately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a landing page and a sales funnel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A landing page is a single page built to get one action, such as a booking or an enquiry. A sales funnel is a connected sequence of pages and follow-up steps that guides a visitor from first interest to a sale or booked call. Which one fits depends on your offer and sales process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build with Systeme.io, GoHighLevel or custom code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All three. Projects are built with custom HTML, CSS and JavaScript, or on platforms such as Systeme.io, GoHighLevel and Shopify when the project calls for them. The choice depends on what you need to manage yourself, how your leads are handled, and how much control the design requires."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you connect my website to a CRM and automate follow-ups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Lead capture forms can be connected to your CRM, with automated follow-up emails, pipeline stages and customer workflows set up behind them. Web & Conversion includes CRM integration and up to 2 automation workflows; Web Systems covers advanced CRM integrations and multi-step workflows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is SEO included in my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, at a level that depends on the package. Web Essentials includes basic on-page SEO setup, Web & Conversion includes on-page SEO foundations, and Web Systems adds technical SEO. SEO supports how your site is found and understood, but no specific ranking or traffic result is guaranteed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a project work from brief to launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every project follows four steps: understanding your requirements, planning the structure and design, developing and connecting the site, then testing and launching it. You see the direction before development begins, and mobile, desktop, links, forms and integrations are checked before launch. Read the full process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a project take, and are revisions included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Timelines and revision allowances depend on the scope, so they are set out in your written proposal before work starts. A single landing page and a multi-page system with automation are very different projects, which is why a fixed number would not be accurate for everyone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are hosting, domains and subscriptions included in the price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, unless your proposal says otherwise. Hosting, domain names, third-party subscriptions and paid integrations are billed separately by their providers. Prices cover the design, development, setup and deployment work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you guarantee leads, sales or search rankings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A well-structured website and funnel makes it easier for visitors to understand your offer and take the next step, but results also depend on your offer, traffic, pricing and market. No lead, revenue, conversion or ranking outcome is guaranteed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with clients outside the Philippines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Aldrich is based in the Philippines and works with coaches and service-based businesses worldwide. Pricing is in USD, and projects are handled online. The easiest way to start is to book a free 15-minute call."
+      }
+    }
+  ]
+}
+</script>
+</Fragment>
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="hbar hbar-1" aria-hidden="true"></span>
+      <span class="hbar hbar-2" aria-hidden="true"></span>
+      <span class="hbar hbar-3" aria-hidden="true"></span>
+      <span class="hbar hbar-4" aria-hidden="true"></span>
+
+      <div class="hero-copy">
+        <p class="hero-sub" data-reveal data-speakable>
+          I design websites, landing pages, and funnels that structure your offer clearly, build trust, and turn traffic into qualified leads and booked clients.
+        </p>
+        <div class="hero-actions" data-reveal>
+          <a class="cta cta-solid" href="https://calendly.com/-aldrichmatthew/15mins"><span>Book Free Strategy Call</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="cta cta-ghost" href="#work"><span>View My Projects</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+
+      <div class="hero-title">
+        <h1 id="hero-title" data-speakable>
+          <span class="line">Website &amp;</span>
+          <span class="line">Funnel Design</span>
+          <span class="hero-tag">for Coaches &amp; Service Businesses</span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Icons used by the pricing lists -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
+
+    <div class="stage" data-stage>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="services-inner">
+
+        <header class="services-head">
+          <h2 id="services-title">Services</h2>
+          <p class="services-lede" data-speakable>
+            Website design and development, landing pages and funnels, custom interactions and motion, and marketing automation for coaches and service businesses.
+          </p>
+        </header>
+
+        <div class="services-list" data-accordion>
+        <article class="service is-open" id="service-website">
+          <h3>
+            <button class="service-trigger" type="button" aria-expanded="true" aria-controls="service-website-panel">
+              <span class="service-num" aria-hidden="true">01.</span>
+              <span class="service-name">Website Design &amp; Development</span>
+              <svg class="service-arrow" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </h3>
+          <div class="service-panel" id="service-website-panel">
+            <div><p>Custom websites built around your brand, services, and business requirements. From page structure and visual design to responsive development and technical setup.</p></div>
+          </div>
+        </article>
+        <article class="service" id="service-funnel">
+          <h3>
+            <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-funnel-panel">
+              <span class="service-num" aria-hidden="true">02.</span>
+              <span class="service-name">Landing Page &amp; Funnel Development</span>
+              <svg class="service-arrow" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </h3>
+          <div class="service-panel" id="service-funnel-panel">
+            <div><p>Landing pages and sales funnels structured to communicate your offer, guide visitors through your sales process, and capture qualified enquiries.</p></div>
+          </div>
+        </article>
+        <article class="service" id="service-motion">
+          <h3>
+            <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-motion-panel">
+              <span class="service-num" aria-hidden="true">03.</span>
+              <span class="service-name">Custom Interactions &amp; Motion Design</span>
+              <svg class="service-arrow" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </h3>
+          <div class="service-panel" id="service-motion-panel">
+            <div><p>Custom frontend interactions, GSAP animations, Lenis smooth scrolling, and JavaScript functionality that give your website more control over how content moves and responds.</p></div>
+          </div>
+        </article>
+        <article class="service" id="service-automation">
+          <h3>
+            <button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-automation-panel">
+              <span class="service-num" aria-hidden="true">04.</span>
+              <span class="service-name">Marketing Automation &amp; Integrations</span>
+              <svg class="service-arrow" width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </h3>
+          <div class="service-panel" id="service-automation-panel">
+            <div><p>Connected forms, CRM pipelines, automated follow-ups, and customer workflows that reduce manual tasks and help businesses manage incoming leads.</p></div>
+          </div>
+        </article>
+        </div>
+
+        <div class="orb-slot" data-orb-slot="a" aria-hidden="true"></div>
+
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="pricing-inner">
+
+        <div class="pricing-side">
+          <div>
+            <h2 id="pricing-title">Pricing</h2>
+            <p class="pricing-lede" data-speakable>
+              Custom websites, landing pages and sales funnels for coaches and service businesses, starting at $850 USD. Final quotes depend on scope and complexity.
+            </p>
+          </div>
+          <div class="orb-slot" data-orb-slot="b" aria-hidden="true"></div>
+          <div class="pricing-cta">
+            <p>Not sure where to start?<br>Let&rsquo;s figure it out together.</p>
+            <a class="talk" href="https://calendly.com/-aldrichmatthew/15mins"><span>Let&rsquo;s Talk</span>
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="pricing-main">
+
+          <article class="package" id="web-essentials" aria-labelledby="web-essentials-title">
+            <h3 id="web-essentials-title">Web Essentials</h3>
+            <p class="package-for">For businesses that need a professional website or landing page with a clear structure, custom design, and essential functionality.</p>
+
+            <p class="label included">What&rsquo;s included</p>
+            <ul class="checks">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>One custom landing page</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Conversion-focused content structure</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom visual design</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Responsive desktop and mobile layouts</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>HTML, CSS and JavaScript customization</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Lead capture forms and basic integrations</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>CSS animations and interactive elements</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Basic on-page SEO setup</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Testing and deployment</li>
+            </ul>
+            <p class="package-motion"><span class="label">Motion</span>CSS transitions, hover effects and lightweight JavaScript interactions. Advanced GSAP and Lenis implementation available separately.</p>
+
+            <p class="price"><span class="label">Starting at</span><span class="amount">$<span data-count="850">850</span><span class="cur">USD</span></span></p>
+          </article>
+
+          <article class="package" id="web-conversion" aria-labelledby="web-conversion-title">
+            <h3 id="web-conversion-title">Web &amp; Conversion</h3>
+            <p class="package-for">For businesses that need a stronger online presence, a structured conversion journey, and automated lead management.</p>
+
+            <p class="label included">What&rsquo;s included</p>
+            <ul class="checks">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Multi-page website (up to 5 pages) or defined sales funnel</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom UI design and page architecture</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Conversion-focused content structure</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom HTML, CSS and JavaScript</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>GSAP scroll-triggered animations</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Lenis smooth scrolling</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Animated content reveals and section transitions</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom interactive elements</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>CRM and lead capture integration</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Up to 2 automation workflows</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Analytics and conversion tracking</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>On-page SEO foundations</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Testing and deployment</li>
+            </ul>
+            <p class="package-motion"><span class="label">Motion</span>GSAP sequences, scroll-based animation and Lenis integration, scoped to the agreed pages and interactions.</p>
+
+            <p class="price"><span class="label">Starting at</span><span class="amount">$<span data-count="2200">2,200</span><span class="cur">USD</span></span></p>
+          </article>
+
+          <article class="package" id="web-systems" aria-labelledby="web-systems-title">
+            <h3 id="web-systems-title">Web Systems</h3>
+            <p class="package-for">For established businesses that require custom development, advanced website interactions, and connected marketing infrastructure.</p>
+
+            <p class="label included">What&rsquo;s included</p>
+            <ul class="checks">
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom multi-page website architecture</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Advanced UI/UX and visual direction</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom HTML, CSS and JavaScript development</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Advanced GSAP animation sequences</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Lenis smooth scrolling</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Interactive cursor-based experiences</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Complex JavaScript functionality</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Custom interactive website sections</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Advanced CRM integrations</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Multi-step automation workflows</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Customer journey configuration</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Analytics and conversion tracking</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Technical SEO implementation</li>
+              <li><svg aria-hidden="true"><use href="#i-check"/></svg>Comprehensive testing and deployment</li>
+            </ul>
+            <p class="package-motion"><span class="label">Motion</span>Advanced scroll choreography, interactive components and custom animation systems based on project requirements.</p>
+
+            <p class="price"><span class="label">Starting at</span><span class="amount">$<span data-count="4500">4,500</span><span class="cur">USD</span></span></p>
+          </article>
+
+          <div class="compare" id="package-comparison">
+            <h3>Package comparison</h3>
+            <div class="table-wrap" tabindex="0" role="region" aria-label="Package comparison table, scrolls sideways on small screens">
+              <table>
+                <caption class="sr-only">Deliverables included in Web Essentials, Web &amp; Conversion and Web Systems</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Deliverable</th>
+                    <th scope="col">Web Essentials</th>
+                    <th scope="col">Web &amp; Conversion</th>
+                    <th scope="col">Web Systems</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Landing page</th><td>1</td><td>Included</td><td>Included</td></tr>
+                  <tr><th scope="row">Multi-page website</th><td>Add-on</td><td>Up to 5 pages</td><td>Scoped</td></tr>
+                  <tr><th scope="row">Custom HTML/CSS/JS</th><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                  <tr><th scope="row">CSS animations</th><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                  <tr><th scope="row">GSAP</th><td>Add-on</td><td>Included</td><td>Advanced</td></tr>
+                  <tr><th scope="row">Lenis</th><td>Add-on</td><td>Included</td><td>Included</td></tr>
+                  <tr><th scope="row">Interactive elements</th><td>Basic</td><td>Custom</td><td>Complex</td></tr>
+                  <tr><th scope="row">CRM integration</th><td>Basic</td><td>Included</td><td>Advanced</td></tr>
+                  <tr><th scope="row">Automation</th><td>Add-on</td><td>2 workflows</td><td>Multi-step</td></tr>
+                  <tr><th scope="row">Analytics</th><td>Basic</td><td>Included</td><td>Advanced</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="terms" id="project-terms">
+            <h3>Important project terms</h3>
+            <ul>
+              <li>All prices are starting estimates; final quotes depend on project scope and complexity.</li>
+              <li>Third-party subscriptions, hosting, domains and paid integrations are separate unless specified.</li>
+              <li>Advanced animations and interactions are subject to platform compatibility and performance requirements.</li>
+              <li>Project timelines and revision allowances are defined in the proposal.</li>
+              <li>No guaranteed lead, revenue or conversion outcomes.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="work" aria-labelledby="work-title">
+      <div class="work-stage" data-work-stage>
+        <div class="work-reveal">
+          <h2 class="work-label" id="work-title">Selected Projects</h2>
+          <nav class="work-list" aria-label="Projects">
+          <a href="#project-nicro" data-project-link>NICRO spa</a>
+          <a href="#project-omega" data-project-link>Omega</a>
+          <a href="#project-empire" data-project-link>Empire</a>
+          <a href="#project-brightwater" data-project-link>Brightwater Legal</a>
+          <a href="#project-clothing" data-project-link>Clothing E-commerce</a>
+          <a href="#project-chauffeur" data-project-link>Black Chauffeur</a>
+          <a href="projects.html">All projects</a>
+          </nav>
+          <div class="slides">
+        <article class="slide" id="project-nicro" aria-labelledby="project-nicro-title">
+          <div class="slide-media">
+            <img src="assets/img/project-nicro.webp" alt="Website for NICRO spa: the homepage headline reads Custom Components for Extreme Industrial Conditions, above a welder working inside a large pipe." width="1280" height="720" decoding="async">
+            <div class="slide-tint" aria-hidden="true"></div>
+            <div class="slide-shade" aria-hidden="true"></div>
+          </div>
+          <div class="slide-ui">
+            <p class="slide-count"><span class="slide-no">01</span><span class="slide-of"> / 06</span></p>
+            <p class="slide-sector">Industrial manufacturing</p>
+            <h3 class="slide-title" id="project-nicro-title">NICRO spa</h3>
+            <div class="slide-info">
+              <p class="slide-desc">A website for NICRO, a specialist in high-nickel alloy components. It presents the company’s engineering, prototyping, custom manufacturing and reverse engineering services.</p>
+              <dl class="slide-meta">
+                <div><dt>Role</dt><dd>Design &amp; Development</dd></div>
+                <div><dt>Type</dt><dd>Website</dd></div>
+              </dl>
+              <a class="slide-link" href="https://calendly.com/-aldrichmatthew/15mins">Discuss a similar project</a>
+            </div>
+          </div>
+        </article>
+        <article class="slide" id="project-omega" aria-labelledby="project-omega-title">
+          <div class="slide-media">
+            <img src="assets/img/project-omega.webp" alt="Website for Omega interior design: the homepage headline reads Luxury Minimalist Interior Design For Modern Living, over a night photo of a modern house." width="1280" height="720" decoding="async" loading="lazy">
+            <div class="slide-tint" aria-hidden="true"></div>
+            <div class="slide-shade" aria-hidden="true"></div>
+          </div>
+          <div class="slide-ui">
+            <p class="slide-count"><span class="slide-no">02</span><span class="slide-of"> / 06</span></p>
+            <p class="slide-sector">Interior design</p>
+            <h3 class="slide-title" id="project-omega-title">Omega</h3>
+            <div class="slide-info">
+              <p class="slide-desc">A website for OMEGA, a studio designing contemporary residential interiors. Full-screen imagery leads the page, with a clear route to request a consultation.</p>
+              <dl class="slide-meta">
+                <div><dt>Role</dt><dd>Design &amp; Development</dd></div>
+                <div><dt>Type</dt><dd>Website</dd></div>
+              </dl>
+              <a class="slide-link" href="https://calendly.com/-aldrichmatthew/15mins">Discuss a similar project</a>
+            </div>
+          </div>
+        </article>
+        <article class="slide" id="project-empire" aria-labelledby="project-empire-title">
+          <div class="slide-media">
+            <img src="assets/img/project-empire.webp" alt="Website for Empire construction company: the homepage headline reads Built With Precision. Managed With Accountability. Designed to Last, over a photo of sparks from a grinder." width="1280" height="720" decoding="async" loading="lazy">
+            <div class="slide-tint" aria-hidden="true"></div>
+            <div class="slide-shade" aria-hidden="true"></div>
+          </div>
+          <div class="slide-ui">
+            <p class="slide-count"><span class="slide-no">03</span><span class="slide-of"> / 06</span></p>
+            <p class="slide-sector">Construction</p>
+            <h3 class="slide-title" id="project-empire-title">Empire</h3>
+            <div class="slide-info">
+              <p class="slide-desc">A website for Empire, a residential and commercial construction company. A full-screen hero introduces the services, and a quote request sits in the navigation.</p>
+              <dl class="slide-meta">
+                <div><dt>Role</dt><dd>Design &amp; Development</dd></div>
+                <div><dt>Type</dt><dd>Website</dd></div>
+              </dl>
+              <a class="slide-link" href="https://calendly.com/-aldrichmatthew/15mins">Discuss a similar project</a>
+            </div>
+          </div>
+        </article>
+        <article class="slide" id="project-brightwater" aria-labelledby="project-brightwater-title">
+          <div class="slide-media">
+            <img src="assets/img/project-brightwater.webp" alt="Brightwater Legal website concept: the homepage headline reads Family law advice for people navigating separation, divorce and parenting matters in Gold Coast, over a photo of a couple embracing." width="1280" height="720" decoding="async" loading="lazy">
+            <div class="slide-tint" aria-hidden="true"></div>
+            <div class="slide-shade" aria-hidden="true"></div>
+          </div>
+          <div class="slide-ui">
+            <p class="slide-count"><span class="slide-no">04</span><span class="slide-of"> / 06</span></p>
+            <p class="slide-sector">Legal services</p>
+            <h3 class="slide-title" id="project-brightwater-title">Brightwater Legal</h3>
+            <div class="slide-info">
+              <p class="slide-desc">A website concept for a legal services practice, designed to present its services with clarity and a more professional, credible online presence.</p>
+              <dl class="slide-meta">
+                <div><dt>Role</dt><dd>Design &amp; Development</dd></div>
+                <div><dt>Type</dt><dd>Website concept</dd></div>
+              </dl>
+              <a class="slide-link" href="https://calendly.com/-aldrichmatthew/15mins">Discuss a similar project</a>
+            </div>
+          </div>
+        </article>
+        <article class="slide" id="project-clothing" aria-labelledby="project-clothing-title">
+          <div class="slide-media">
+            <img src="assets/img/project-clothing.webp" alt="Clothing e-commerce website concept: the homepage headline reads Fade Into Black, over a photo of two people in streetwear on a city rooftop, with a Shop the Drop button." width="1280" height="720" decoding="async" loading="lazy">
+            <div class="slide-tint" aria-hidden="true"></div>
+            <div class="slide-shade" aria-hidden="true"></div>
+          </div>
+          <div class="slide-ui">
+            <p class="slide-count"><span class="slide-no">05</span><span class="slide-of"> / 06</span></p>
+            <p class="slide-sector">Fashion / E-commerce</p>
+            <h3 class="slide-title slide-title-long" id="project-clothing-title">Clothing E-commerce</h3>
+            <div class="slide-info">
+              <p class="slide-desc">An e-commerce website concept for a clothing brand, built around product presentation and a focused online shopping experience.</p>
+              <dl class="slide-meta">
+                <div><dt>Role</dt><dd>Design &amp; Development</dd></div>
+                <div><dt>Type</dt><dd>E-commerce website concept</dd></div>
+              </dl>
+              <a class="slide-link" href="https://calendly.com/-aldrichmatthew/15mins">Discuss a similar project</a>
+            </div>
+          </div>
+        </article>
+        <article class="slide" id="project-chauffeur" aria-labelledby="project-chauffeur-title">
+          <div class="slide-media">
+            <img src="assets/img/project-chauffeur.webp" alt="Black Chauffeur website concept: the homepage headline reads Feel the Luxury, Own Every Arrival, over the dark interior of a luxury car, with a Book Now button." width="1280" height="720" decoding="async" loading="lazy">
+            <div class="slide-tint" aria-hidden="true"></div>
+            <div class="slide-shade" aria-hidden="true"></div>
+          </div>
+          <div class="slide-ui">
+            <p class="slide-count"><span class="slide-no">06</span><span class="slide-of"> / 06</span></p>
+            <p class="slide-sector">Luxury transportation</p>
+            <h3 class="slide-title" id="project-chauffeur-title">Black Chauffeur</h3>
+            <div class="slide-info">
+              <p class="slide-desc">A website concept for a private chauffeur service, designed to communicate a premium transportation offering through a refined visual direction.</p>
+              <dl class="slide-meta">
+                <div><dt>Role</dt><dd>Design &amp; Development</dd></div>
+                <div><dt>Type</dt><dd>Website concept</dd></div>
+              </dl>
+              <a class="slide-link" href="https://calendly.com/-aldrichmatthew/15mins">Discuss a similar project</a>
+            </div>
+          </div>
+        </article>
+          </div>
+          <div class="slash" aria-hidden="true"><i></i><i></i></div>
+        </div>
+        <div class="shock" aria-hidden="true"></div>
+        <canvas class="debris" data-debris aria-hidden="true"></canvas>
+      </div>
+    </section>
+
+    <!-- One ball for the whole page: it starts in Services, flies into Pricing, then to the centre of an empty screen where it explodes into the projects. -->
+    <div class="orb" data-orb aria-hidden="true"></div>
+
+    </div>
+
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="process-inner">
+        <header class="process-head">
+          <h2 id="process-title">The Development Process</h2>
+          <div class="process-intro" data-speakable>
+            <p class="process-sub" data-stagger>From Project Brief to Launch</p>
+            <p class="process-lede" data-stagger>Every website and funnel project follows a clear process, from understanding your business requirements to building, testing, and launching a working solution.</p>
+          </div>
+        </header>
+
+        <div class="gantt" aria-hidden="true">
+          <div class="gantt-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <ol class="gantt-bars"><li class="bar" style="--s:0;--w:23"><span class="bar-long">Understand</span></li><li class="bar" style="--s:17.2;--w:27.1"><span class="bar-long">Plan</span></li><li class="bar" style="--s:34.3;--w:48.6"><span class="bar-long">Develop &amp; Connect</span></li><li class="bar" style="--s:68.5;--w:31.5"><span class="bar-long">Test &amp; Launch</span></li></ol>
+          <div class="gantt-nums"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span></div>
+        </div>
+
+        <ol class="steps">
+          <li class="step" id="step-01">
+            <h3>Understand the Requirements</h3>
+            <p>We start by discussing your business, services, target audience, project goals, and technical requirements. This gives the project a clear direction before design and development begin.</p>
+          </li>
+          <li class="step" id="step-02">
+            <h3>Plan the Structure &amp; Design</h3>
+            <p>I map out the page structure, content hierarchy, user journey, and visual direction. The goal is to make your offer easy to understand and give visitors a clear path toward taking action.</p>
+          </li>
+          <li class="step" id="step-03">
+            <h3>Develop &amp; Connect</h3>
+            <p>I build the approved design using the appropriate platform and custom code where needed. This includes responsive layouts, interactive elements, forms, CRM connections, and marketing automations based on the project scope.</p>
+          </li>
+          <li class="step" id="step-04">
+            <h3>Test &amp; Launch</h3>
+            <p>Before launch, I check mobile and desktop layouts, links, forms, integrations, functionality, and performance. Once everything is ready, the website or funnel is deployed and handed over.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="about-inner">
+        <div class="about-top">
+          <p class="about-label" data-about>The person behind MAD Funnel Design</p>
+          <p class="about-chip" data-about>Designer &amp; Developer</p>
+        </div>
+        <h2 id="about-title"><span class="n-first">Aldrich</span> <span class="n-last">Matthew</span></h2>
+        <div class="about-copy">
+          <p class="about-intro" data-about data-speakable>I'm Aldrich Matthew, a website and funnel designer and developer based in the Philippines, working with coaches and service-based businesses worldwide.</p>
+          <p data-about>I combine visual design, front-end development, conversion-focused page structure, and marketing automation to build websites and funnels around real business needs.</p>
+          <p data-about>My work spans custom HTML, CSS, and JavaScript development, GSAP animations, Lenis smooth scrolling, CRM integrations, and automated workflows using platforms like Systeme.io, GoHighLevel, and Shopify.</p>
+          <p data-about>Whether it's a business website, a landing page, or a connected marketing system, my focus is on making every part work together, from the way your offer is presented to what happens when someone takes action.</p>
+          <ul class="about-stack" aria-label="Tools and platforms">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GSAP</li><li>Lenis</li><li>Systeme.io</li><li>GoHighLevel</li><li>Shopify</li>
+          </ul>
+        </div>
+        <figure class="portrait" data-portrait>
+          <span class="portrait-glow" aria-hidden="true"></span>
+          <div class="portrait-stack">
+            <img class="p-base" src="assets/img/aldrich-matthew.webp" alt="Aldrich Matthew, website and funnel designer and developer" width="1200" height="1200" loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+      <svg class="filters" width="0" height="0" aria-hidden="true" focusable="false">
+        <filter id="duo-yellow" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0.66 1.30 0.24 0 0  0.46 0.91 0.17 0 0  0.13 0.26 0.05 0 0  0 0 0 1 0"/>
+        </filter>
+        <filter id="duo-light" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values="0.72 1.41 0.27 0 0  0.60 1.18 0.22 0 0  0.42 0.83 0.15 0 0  0 0 0 1 0"/>
+        </filter>
+      </svg>
+    </section>
+
+    <section class="voices" id="testimonials" aria-labelledby="voices-title">
+      <div class="voices-inner">
+        <header class="voices-head">
+          <p class="voices-label" data-voices-fade>Client testimonials</p>
+          <h2 id="voices-title">What clients say</h2>
+        </header>
+        <div class="voices-body" data-voices>
+          <div class="voices-wheel" data-wheel></div>
+          <div class="voices-quotes">
+          <figure class="voice" data-voice>
+            <img class="voice-photo" src="assets/img/t-lorenzo-moretti.webp" alt="Portrait of Lorenzo, Industrial Business Owner" width="240" height="240" loading="lazy" decoding="async">
+            <blockquote class="voice-quote"><p>We wanted something that looked more in line with the kind of work we do. The website now presents our products and services in a much clearer way. It&rsquo;s easier for people to understand what we offer without having to dig through too much information.</p></blockquote>
+            <figcaption class="voice-by"><strong>Lorenzo</strong><span>Industrial Business Owner</span></figcaption>
+          </figure>
+          <figure class="voice" data-voice>
+            <img class="voice-photo" src="assets/img/t-christopher-hayes.webp" alt="Portrait of Christopher, Contractor" width="240" height="240" loading="lazy" decoding="async">
+            <blockquote class="voice-quote"><p>What I liked most was having everything in one place. People can see the type of work we handle, learn about our services, and get in touch without having to ask us for every little detail. It makes presenting the business a lot easier.</p></blockquote>
+            <figcaption class="voice-by"><strong>Christopher</strong><span>Contractor</span></figcaption>
+          </figure>
+          <figure class="voice" data-voice>
+            <img class="voice-photo" src="assets/img/t-janet-parker.webp" alt="Portrait of Janet, Interior Designer" width="240" height="240" loading="lazy" decoding="async">
+            <blockquote class="voice-quote"><p>I wanted the website to feel like an extension of my design work, not just another business website. The way the projects and images are presented makes a big difference. It feels much closer to the style I want people to associate with my work.</p></blockquote>
+            <figcaption class="voice-by"><strong>Janet</strong><span>Interior Designer</span></figcaption>
+          </figure>
+          <figure class="voice" data-voice>
+            <img class="voice-photo" src="assets/img/t-sean-gallagher.webp" alt="Portrait of Sean, Solar Business Owner" width="240" height="240" loading="lazy" decoding="async">
+            <blockquote class="voice-quote"><p>Solar can be difficult to explain to people who are just starting to look into it. Having the services laid out clearly makes it easier for visitors to understand what we do and what their next step could be. That&rsquo;s exactly what we needed from the website.</p></blockquote>
+            <figcaption class="voice-by"><strong>Sean</strong><span>Solar Business Owner</span></figcaption>
+          </figure>
+          <figure class="voice" data-voice>
+            <img class="voice-photo" src="assets/img/t-ms-jane.webp" alt="Portrait of Jane, Fitness Instructor" width="240" height="240" loading="lazy" decoding="async">
+            <blockquote class="voice-quote"><p>Working with Aldrich helped me take an important step forward in my fitness career. He created a landing page that gave me a more professional online presence and made it easier for potential clients to find my services and send inquiries. I also appreciate that the page was set up to capture leads automatically, so I have a better way to connect with people interested in my fitness programs.</p></blockquote>
+            <figcaption class="voice-by"><strong>Jane</strong><span>Fitness Instructor</span></figcaption>
+          </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="faq-inner">
+        <header class="faq-side">
+          <p class="faq-label" data-faq-fade>Questions, answered</p>
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <p class="faq-lede" data-faq-fade data-speakable>Straight answers about pricing, process, platforms and what is and isn&rsquo;t included before you book a call.</p>
+          <div class="faq-cta" data-faq-fade>
+            <p>Can&rsquo;t find your answer?</p>
+            <a class="talk" href="https://calendly.com/-aldrichmatthew/15mins"><span>Let&rsquo;s Talk</span>
+              <svg width="24" height="24" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </div>
+        </header>
+        <div class="faq-list" data-faq>
+          <!-- faq:start -->
+          <div class="faq-item is-open">
+            <h3><button class="faq-q" type="button" id="faq-q1" aria-expanded="true" aria-controls="faq-a1"><span>Who is MAD Funnel Design for?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>MAD Funnel Design is for coaches, consultants, creators and service-based businesses that need a website, landing page or sales funnel built around their offer. Aldrich Matthew designs and develops each project himself, from the page structure and visual design to the forms and automation behind it.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2"><span>How much does a website or sales funnel cost?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>Packages start at $850 USD for a single custom landing page. A multi-page website or defined sales funnel starts at $2,200, and a custom multi-page system for established businesses starts at $4,500. These are starting estimates; the final quote depends on scope and complexity. See the <a href="#pricing">full package breakdown</a>.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3"><span>What is included in the $850 Web Essentials package?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Web Essentials covers one custom landing page with a conversion-focused structure, custom visual design, responsive desktop and mobile layouts, lead capture forms with basic integrations, basic on-page SEO setup, testing and deployment. Advanced GSAP and Lenis animation is available separately.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4"><span>What is the difference between a landing page and a sales funnel?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>A landing page is a single page built to get one action, such as a booking or an enquiry. A sales funnel is a connected sequence of pages and follow-up steps that guides a visitor from first interest to a sale or booked call. Which one fits depends on your offer and sales process.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q5" aria-expanded="false" aria-controls="faq-a5"><span>Do you build with Systeme.io, GoHighLevel or custom code?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>All three. Projects are built with custom HTML, CSS and JavaScript, or on platforms such as Systeme.io, GoHighLevel and Shopify when the project calls for them. The choice depends on what you need to manage yourself, how your leads are handled, and how much control the design requires.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q6" aria-expanded="false" aria-controls="faq-a6"><span>Can you connect my website to a CRM and automate follow-ups?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>Yes. Lead capture forms can be connected to your CRM, with automated follow-up emails, pipeline stages and customer workflows set up behind them. Web &amp; Conversion includes CRM integration and up to 2 automation workflows; Web Systems covers advanced CRM integrations and multi-step workflows.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q7" aria-expanded="false" aria-controls="faq-a7"><span>Is SEO included in my website?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p>Yes, at a level that depends on the package. Web Essentials includes basic on-page SEO setup, Web &amp; Conversion includes on-page SEO foundations, and Web Systems adds technical SEO. SEO supports how your site is found and understood, but no specific ranking or traffic result is guaranteed.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q8" aria-expanded="false" aria-controls="faq-a8"><span>How does a project work from brief to launch?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a8" role="region" aria-labelledby="faq-q8"><div><p>Every project follows four steps: understanding your requirements, planning the structure and design, developing and connecting the site, then testing and launching it. You see the direction before development begins, and mobile, desktop, links, forms and integrations are checked before launch. Read the <a href="#process">full process</a>.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q9" aria-expanded="false" aria-controls="faq-a9"><span>How long does a project take, and are revisions included?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a9" role="region" aria-labelledby="faq-q9"><div><p>Timelines and revision allowances depend on the scope, so they are set out in your written proposal before work starts. A single landing page and a multi-page system with automation are very different projects, which is why a fixed number would not be accurate for everyone.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q10" aria-expanded="false" aria-controls="faq-a10"><span>Are hosting, domains and subscriptions included in the price?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a10" role="region" aria-labelledby="faq-q10"><div><p>No, unless your proposal says otherwise. Hosting, domain names, third-party subscriptions and paid integrations are billed separately by their providers. Prices cover the design, development, setup and deployment work.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q11" aria-expanded="false" aria-controls="faq-a11"><span>Do you guarantee leads, sales or search rankings?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a11" role="region" aria-labelledby="faq-q11"><div><p>No. A well-structured website and funnel makes it easier for visitors to understand your offer and take the next step, but results also depend on your offer, traffic, pricing and market. No lead, revenue, conversion or ranking outcome is guaranteed.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <h3><button class="faq-q" type="button" id="faq-q12" aria-expanded="false" aria-controls="faq-a12"><span>Do you work with clients outside the Philippines?</span><span class="faq-icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a12" role="region" aria-labelledby="faq-q12"><div><p>Yes. Aldrich is based in the Philippines and works with coaches and service-based businesses worldwide. Pricing is in USD, and projects are handled online. The easiest way to start is to <a href="https://calendly.com/-aldrichmatthew/15mins">book a free 15-minute call</a>.</p></div></div>
+          </div>
+          <!-- faq:end -->
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  
+</Base>

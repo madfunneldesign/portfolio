@@ -1,0 +1,116 @@
+# MAD Funnel Design
+
+> MAD Funnel Design is the website and funnel design business of Aldrich Matthew Domingo (Drich). It designs and builds custom websites, landing pages and sales funnels for coaches, consultants, creators and service businesses, and sets up the forms, CRM connections and automation behind them. Packages start at $850 USD; final quotes depend on scope and complexity.
+
+## Services
+
+- Website Design & Development: custom websites built around your brand, services, and business requirements, from page structure and visual design to responsive development and technical setup.
+- Landing Page & Funnel Development: landing pages and sales funnels structured to communicate your offer, guide visitors through your sales process, and capture qualified enquiries.
+- Custom Interactions & Motion Design: custom frontend interactions, GSAP animations, Lenis smooth scrolling, and JavaScript functionality that give your website more control over how content moves and responds.
+- Marketing Automation & Integrations: connected forms, CRM pipelines, automated follow-ups, and customer workflows that reduce manual tasks and help businesses manage incoming leads.
+
+## Packages (starting prices in USD)
+
+- Web Essentials, from $850: one custom landing page with conversion-focused structure, responsive layouts, custom HTML/CSS/JavaScript, lead capture forms, basic integrations, basic on-page SEO, testing and deployment. GSAP and Lenis are available as add-ons.
+- Web & Conversion, from $2,200: a multi-page website (up to 5 pages) or a defined sales funnel, with GSAP scroll animation, Lenis smooth scrolling, CRM and lead capture integration, up to 2 automation workflows, analytics and conversion tracking, and on-page SEO foundations.
+- Web Systems, from $4,500: custom multi-page architecture for established businesses, advanced GSAP animation, interactive cursor-based experiences, advanced CRM integrations, multi-step automation workflows, customer journey configuration, and technical SEO.
+
+## Selected projects
+- NICRO spa: a website for a specialist in high-nickel alloy components, covering engineering, prototyping, custom manufacturing and reverse engineering. Role: design and development.
+- Omega: a website for a studio designing contemporary residential interiors, with full-screen imagery and a clear route to request a consultation. Role: design and development.
+- Empire: a website for a residential and commercial construction company, with a full-screen hero and a quote request in the navigation. Role: design and development.
+
+## Process
+1. Understand the Requirements: We start by discussing your business, services, target audience, project goals, and technical requirements. This gives the project a clear direction before design and development begin.
+2. Plan the Structure & Design: I map out the page structure, content hierarchy, user journey, and visual direction. The goal is to make your offer easy to understand and give visitors a clear path toward taking action.
+3. Develop & Connect: I build the approved design using the appropriate platform and custom code where needed. This includes responsive layouts, interactive elements, forms, CRM connections, and marketing automations based on the project scope.
+4. Test & Launch: Before launch, I check mobile and desktop layouts, links, forms, integrations, functionality, and performance. Once everything is ready, the website or funnel is deployed and handed over.
+
+## About
+Aldrich Matthew is a website and funnel designer and developer based in the Philippines, working with coaches and service-based businesses worldwide. He combines visual design, front-end development, conversion-focused page structure and marketing automation, using custom HTML, CSS and JavaScript, GSAP, Lenis, CRM integrations and automated workflows on platforms like Systeme.io and GoHighLevel.
+
+## FAQ
+
+**Who is MAD Funnel Design for?**
+MAD Funnel Design is for coaches, consultants, creators and service-based businesses that need a website, landing page or sales funnel built around their offer. Aldrich Matthew designs and develops each project himself, from the page structure and visual design to the forms and automation behind it.
+
+**How much does a website or sales funnel cost?**
+Packages start at $850 USD for a single custom landing page. A multi-page website or defined sales funnel starts at $2,200, and a custom multi-page system for established businesses starts at $4,500. These are starting estimates; the final quote depends on scope and complexity. See the full package breakdown.
+
+**What is included in the $850 Web Essentials package?**
+Web Essentials covers one custom landing page with a conversion-focused structure, custom visual design, responsive desktop and mobile layouts, lead capture forms with basic integrations, basic on-page SEO setup, testing and deployment. Advanced GSAP and Lenis animation is available separately.
+
+**What is the difference between a landing page and a sales funnel?**
+A landing page is a single page built to get one action, such as a booking or an enquiry. A sales funnel is a connected sequence of pages and follow-up steps that guides a visitor from first interest to a sale or booked call. Which one fits depends on your offer and sales process.
+
+**Do you build with Systeme.io, GoHighLevel or custom code?**
+All three. Projects are built with custom HTML, CSS and JavaScript, or on platforms such as Systeme.io, GoHighLevel and Shopify when the project calls for them. The choice depends on what you need to manage yourself, how your leads are handled, and how much control the design requires.
+
+**Can you connect my website to a CRM and automate follow-ups?**
+Yes. Lead capture forms can be connected to your CRM, with automated follow-up emails, pipeline stages and customer workflows set up behind them. Web & Conversion includes CRM integration and up to 2 automation workflows; Web Systems covers advanced CRM integrations and multi-step workflows.
+
+**Is SEO included in my website?**
+Yes, at a level that depends on the package. Web Essentials includes basic on-page SEO setup, Web & Conversion includes on-page SEO foundations, and Web Systems adds technical SEO. SEO supports how your site is found and understood, but no specific ranking or traffic result is guaranteed.
+
+**How does a project work from brief to launch?**
+Every project follows four steps: understanding your requirements, planning the structure and design, developing and connecting the site, then testing and launching it. You see the direction before development begins, and mobile, desktop, links, forms and integrations are checked before launch. Read the full process.
+
+**How long does a project take, and are revisions included?**
+Timelines and revision allowances depend on the scope, so they are set out in your written proposal before work starts. A single landing page and a multi-page system with automation are very different projects, which is why a fixed number would not be accurate for everyone.
+
+**Are hosting, domains and subscriptions included in the price?**
+No, unless your proposal says otherwise. Hosting, domain names, third-party subscriptions and paid integrations are billed separately by their providers. Prices cover the design, development, setup and deployment work.
+
+**Do you guarantee leads, sales or search rankings?**
+No. A well-structured website and funnel makes it easier for visitors to understand your offer and take the next step, but results also depend on your offer, traffic, pricing and market. No lead, revenue, conversion or ranking outcome is guaranteed.
+
+**Do you work with clients outside the Philippines?**
+Yes. Aldrich is based in the Philippines and works with coaches and service-based businesses worldwide. Pricing is in USD, and projects are handled online. The easiest way to start is to book a free 15-minute call.
+
+## Terms
+
+- All prices are starting estimates; final quotes depend on project scope and complexity.
+- Third-party subscriptions, hosting, domains and paid integrations are separate unless specified.
+- Advanced animations and interactions are subject to platform compatibility and performance requirements.
+- Project timelines and revision allowances are defined in the proposal.
+- No lead, revenue or conversion outcomes are guaranteed.
+
+## Who it is for
+
+Coaches, consultants, creators and service businesses that need a website, landing page or client acquisition system built around their offer and brand.
+
+## Technology
+
+Custom HTML, CSS and JavaScript with GSAP animation and Lenis smooth scrolling. Systeme.io, GoHighLevel and Shopify are also used when a project calls for them.
+
+## How to start
+
+- Book a free 15-minute discovery call: https://calendly.com/-aldrichmatthew/15mins
+- Email: madfunneldesign@gmail.com
+
+## Links
+
+- Website: https://www.madfunneldesign.com/
+- Brand identity system: https://www.madfunneldesign.com/brand-identity-system-30-minutes
+- LinkedIn: https://www.linkedin.com/in/aldrich-matthew-domingo-a287672ab
+- Instagram: https://www.instagram.com/drichmatthew/
+- TikTok: https://www.tiktok.com/@madfunneldesign
+- Facebook: https://www.facebook.com/AldrichMatthewDomingoOfficial/
+
+## Contact
+Use the contact form at https://www.madfunneldesign.com/#contact (name, email, business, website, project type, budget, start date and a description), email madfunneldesign@gmail.com, or book a free 15-minute call: https://calendly.com/-aldrichmatthew/15mins
+
+## Pages
+
+- [Home](https://www.madfunneldesign.com/): services, packages, projects, FAQ and contact form.
+- [About Aldrich Matthew](https://www.madfunneldesign.com/about.html): who he is, how he thinks about websites, the four kinds of work he does, the tools he uses (Systeme.io, GoHighLevel, Shopify, Canva, CapCut, n8n, Zapier, Make, GSAP, Lenis) and how a project goes from first discussion to launch.
+- [Services](https://www.madfunneldesign.com/services.html): website design and development, landing pages and sales funnels, CRM integration and marketing automation, search visibility foundations (including AI search), and custom front-end development, with what each can include, who it suits, how projects are scoped and common questions.
+- [Projects](https://www.madfunneldesign.com/projects): six website, e-commerce and custom front-end concept builds (NICRO Industrial, a construction website, an interior design website, Brightwater Legal, a clothing e-commerce store and Black Chauffeur), each with its focus areas. Concept and demo work; no client results are claimed.
+- [NICRO Industrial case study](https://www.madfunneldesign.com/case-nicro-industrial): the design challenge, visual direction and front-end development of this independent website concept.
+- [Construction Website case study](https://www.madfunneldesign.com/case-construction-website): the design challenge, visual direction and front-end development of this independent website concept.
+- [Interior Design Website case study](https://www.madfunneldesign.com/case-interior-design-website): the design challenge, visual direction and front-end development of this independent website concept.
+- [Brightwater Legal case study](https://www.madfunneldesign.com/case-brightwater-legal): the design challenge, visual direction and front-end development of this independent website concept.
+- [Clothing E-commerce case study](https://www.madfunneldesign.com/case-clothing-ecommerce): the design challenge, visual direction and front-end development of this independent website concept.
+- [Black Chauffeur case study](https://www.madfunneldesign.com/case-black-chauffeur): the design challenge, visual direction and front-end development of this independent website concept.
+- [FAQ](https://www.madfunneldesign.com/faq): straight answers about pricing, process, platforms, SEO, hosting and what is and isn't included.
+- [Contact](https://www.madfunneldesign.com/contact): book a free 15-minute strategy call or send a project inquiry.

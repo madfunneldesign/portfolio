@@ -1,0 +1,49 @@
+---
+const { home = "index.html" } = Astro.props;
+---
+<footer class="foot" aria-labelledby="foot-title">
+    <div class="foot-inner">
+      <div class="foot-top">
+        <p class="foot-copy">&copy; <span data-year>2026</span> MAD Funnel Design</p>
+        <h2 class="mark" id="foot-title" data-mark aria-label="MAD">
+          <span class="mark-real" aria-hidden="true">MAD</span>
+          <span class="mark-slices" aria-hidden="true"></span>
+        </h2>
+      </div>
+
+      <div class="foot-grid">
+        <div class="foot-about">
+          <p>Websites, landing pages and sales funnels for coaches and service businesses. Designed, built and connected by one person, from the first sketch to launch.</p>
+          <a class="foot-call" href="https://calendly.com/-aldrichmatthew/15mins"><span>Book a free 15-minute call</span><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        </div>
+        <nav class="foot-col" aria-label="Footer menu">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href={`${home}#pricing`}>Pricing</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="foot-col" aria-label="Social">
+          <h3>Social</h3>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/aldrich-matthew-domingo-a287672ab" rel="me noopener" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/drichmatthew/" rel="me noopener" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/AldrichMatthewDomingoOfficial/" rel="me noopener" target="_blank">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@madfunneldesign" rel="me noopener" target="_blank">TikTok</a></li>
+          </ul>
+        </nav>
+        <nav class="foot-col" aria-label="Legal">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="foot-time"><span>Manila, PH</span> <time data-clock datetime="">--:--</time></p>
+    </div>
+  </footer>

@@ -1,0 +1,300 @@
+---
+import Base from "../layouts/Base.astro";
+import Contact from "../components/Contact.astro";
+---
+<Base bodyClass="page-about page-projects" current="projects">
+<Fragment slot="meta">
+<title>Website Design &amp; Development Projects | MAD Funnel Design</title>
+  <meta name="description" content="Explore website design, landing page, e-commerce, and custom development projects by MAD Funnel Design. See the design approach and implementation behind each build.">
+  <link rel="canonical" href="https://www.madfunneldesign.com/projects">
+  <meta name="author" content="Aldrich Matthew Domingo">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#1C1C1C">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MAD Funnel Design">
+  <meta property="og:url" content="https://www.madfunneldesign.com/projects">
+  <meta property="og:title" content="Website Design &amp; Development Projects | MAD Funnel Design">
+  <meta property="og:description" content="Website, e-commerce and custom front-end projects, with the design approach and implementation behind each build.">
+  <meta property="og:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MAD Funnel Design: website and funnel design for coaches and service businesses">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Website Design &amp; Development Projects | MAD Funnel Design">
+  <meta name="twitter:description" content="Selected website, e-commerce and custom front-end projects.">
+  <meta name="twitter:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+</Fragment>
+<Fragment slot="jsonld">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.madfunneldesign.com/projects#page",
+      "url": "https://www.madfunneldesign.com/projects",
+      "name": "Website Design & Development Projects",
+      "description": "Website design, landing page, e-commerce and custom development projects by MAD Funnel Design, with the design approach and implementation behind each build.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://www.madfunneldesign.com/#website" },
+      "author": { "@id": "https://www.madfunneldesign.com/#person" },
+      "breadcrumb": { "@id": "https://www.madfunneldesign.com/projects#breadcrumb" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.madfunneldesign.com/projects#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.madfunneldesign.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://www.madfunneldesign.com/projects" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.madfunneldesign.com/#person",
+      "name": "Aldrich Matthew Domingo",
+      "alternateName": "Drich",
+      "jobTitle": "Website, Landing Page and Funnel Designer",
+      "url": "https://www.madfunneldesign.com/"
+    }
+  ]
+}
+  </script>
+</Fragment>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M6 18L18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-down-right" viewBox="0 0 24 24"><path d="M5 5l13 13M18 8v10H8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7.6 12.4l3 3 5.8-6.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
+
+    <section class="hero hero-about hero-projects" aria-labelledby="projects-title">
+      <span class="hbar hbar-1" aria-hidden="true"></span>
+      <span class="hbar hbar-2" aria-hidden="true"></span>
+      <span class="hbar hbar-3" aria-hidden="true"></span>
+      <span class="hbar hbar-4" aria-hidden="true"></span>
+
+      <div class="ah-copy">
+        <p class="ah-label" data-reveal>Projects</p>
+        <h1 id="projects-title" data-speakable>
+          <span class="line">Selected</span>
+          <span class="line">Projects</span>
+        </h1>
+        <p class="ah-intro" data-reveal data-speakable>Websites, funnels, and digital experiences, designed and developed around the needs of each business.</p>
+        <p class="ph-note" data-reveal>Six builds, each with its own direction. Concept and demo work is labelled as such.</p>
+      </div>
+
+      <nav class="ph-stack" aria-label="Jump to a project">
+        <ol>
+          <li data-reveal><a class="ph-frame" href="#nicro-industrial"><img src="assets/img/project-nicro.webp" alt="" width="1280" height="720" decoding="async" fetchpriority="high"><span class="ph-cap"><span class="si-n">01</span><span class="si-t">NICRO Industrial</span><svg width="20" height="20" aria-hidden="true"><use href="#i-down-right"/></svg></span></a></li>
+          <li data-reveal><a class="ph-frame" href="#construction-website"><img src="assets/img/project-empire.webp" alt="" width="1280" height="720" decoding="async"><span class="ph-cap"><span class="si-n">02</span><span class="si-t">Construction Website</span><svg width="20" height="20" aria-hidden="true"><use href="#i-down-right"/></svg></span></a></li>
+          <li data-reveal><a class="ph-frame" href="#interior-design-website"><img src="assets/img/project-omega.webp" alt="" width="1280" height="720" decoding="async"><span class="ph-cap"><span class="si-n">03</span><span class="si-t">Interior Design Website</span><svg width="20" height="20" aria-hidden="true"><use href="#i-down-right"/></svg></span></a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <section id="featured" aria-labelledby="featured-title">
+      <div class="ab ab-dark pj-band">
+        <div class="ab-in ab-split">
+          <header class="ab-head">
+            <p class="ab-k" data-rise>Six builds, six different briefs</p>
+            <h2 id="featured-title">Featured projects</h2>
+          </header>
+          <div class="ab-body">
+            <p class="ab-lead" data-rise data-speakable>Each project shows what the site set out to do and how it was built.</p>
+            <p data-rise>These pages show design and build approach. They don&rsquo;t include client results, reviews or performance claims.</p>
+          </div>
+        </div>
+      </div>
+
+    <article class="ab pj pj-a ab-dark" id="nicro-industrial" aria-labelledby="nicro-industrial-title">
+      <div class="ab-in pj-in">
+        <header class="pj-head">
+          <p class="pj-meta" data-rise><span class="pj-n" aria-hidden="true">01</span><span class="pj-cat">Industrial / B2B</span><span class="pj-type">Website Concept</span></p>
+          <h3 id="nicro-industrial-title" data-rise>NICRO Industrial</h3>
+        </header>
+        <figure class="pj-shot" style="--ar:16 / 9"><a class="pj-link" href="https://nicro.systeme.io/nicroindustrialdemo" target="_blank" rel="noopener noreferrer"><img src="assets/img/project-nicro.webp" alt="Concept website for NICRO Industrial: the homepage headline reads Custom Components for Extreme Industrial Conditions, above a welder working inside a large pipe." width="1280" height="720" loading="lazy" decoding="async" style="object-position:center"><span class="pj-hint" aria-hidden="true">View live</span></a><figcaption>Homepage screenshot</figcaption></figure>
+        <div class="pj-copy">
+          <div class="pj-desc-wrap"><p class="pj-desc" data-rise>A custom website concept for an industrial business specializing in high-nickel alloys and industrial materials. The design takes a more focused approach to presenting technical products, communicating industry expertise, and helping business buyers navigate the company’s offerings.</p><p class="pj-desc" data-rise>The visual direction combines industrial-inspired design, structured content, and custom front-end interactions to create a stronger digital presentation.</p></div>
+          <div class="pj-focus" data-rise>
+            <p class="ab-k">Focus areas</p>
+            <ul><li>Industrial brand presentation</li><li>B2B website structure</li><li>Technical product communication</li><li>Custom GSAP animations</li><li>Lenis smooth scrolling</li><li>Responsive front-end development</li></ul>
+          </div>
+          <div class="pj-actions" data-rise>
+            <a class="cta cta-menu" href="https://nicro.systeme.io/nicroindustrialdemo" target="_blank" rel="noopener noreferrer"><span>View Live Project</span><span class="sr-only"> NICRO Industrial (opens in a new tab)</span><svg width="20" height="20" aria-hidden="true"><use href="#i-up-right"/></svg></a>
+            <a class="cta cta-line" href="case-nicro-industrial.html"><span>View Case Study</span><span class="sr-only"> for NICRO Industrial</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="ab pj pj-b ab-amber" id="construction-website" aria-labelledby="construction-website-title">
+      <div class="ab-in pj-in">
+        <header class="pj-head">
+          <p class="pj-meta" data-rise><span class="pj-n" aria-hidden="true">02</span><span class="pj-cat">Construction / Service Business</span><span class="pj-type">Website Concept</span></p>
+          <h3 id="construction-website-title" data-rise>Construction Website</h3>
+        </header>
+        <figure class="pj-shot" style="--ar:16 / 9"><a class="pj-link" href="https://madfunnelservice.systeme.io/constructiondemo" target="_blank" rel="noopener noreferrer"><img src="assets/img/project-empire.webp" alt="Construction website concept: the homepage headline reads Built With Precision. Managed With Accountability. Designed to Last, over a photo of sparks from a grinder." width="1280" height="720" loading="lazy" decoding="async" style="object-position:center"><span class="pj-hint" aria-hidden="true">View live</span></a><figcaption>Homepage screenshot</figcaption></figure>
+        <div class="pj-copy">
+          <div class="pj-desc-wrap"><p class="pj-desc" data-rise>A website concept for a construction business, designed to communicate its services, present its capabilities, and give potential customers a clearer understanding of the company.</p><p class="pj-desc" data-rise>The structure prioritizes service visibility, straightforward navigation, and clear inquiry pathways, helping visitors move from exploring the business to considering its services.</p></div>
+          <div class="pj-focus" data-rise>
+            <p class="ab-k">Focus areas</p>
+            <ul><li>Construction service presentation</li><li>Business credibility and trust</li><li>Service-focused content structure</li><li>Clear calls to action</li><li>Responsive website design</li></ul>
+          </div>
+          <div class="pj-actions" data-rise>
+            <a class="cta cta-solid" href="https://madfunnelservice.systeme.io/constructiondemo" target="_blank" rel="noopener noreferrer"><span>View Live Project</span><span class="sr-only"> Construction Website (opens in a new tab)</span><svg width="20" height="20" aria-hidden="true"><use href="#i-up-right"/></svg></a>
+            <a class="cta cta-ghost" href="case-construction-website.html"><span>View Case Study</span><span class="sr-only"> for Construction Website</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="ab pj pj-c ab-white" id="interior-design-website" aria-labelledby="interior-design-website-title">
+      <div class="ab-in pj-in">
+        <header class="pj-head">
+          <p class="pj-meta" data-rise><span class="pj-n" aria-hidden="true">03</span><span class="pj-cat">Interior Design / Creative Services</span><span class="pj-type">Website Concept</span></p>
+          <h3 id="interior-design-website-title" data-rise>Interior Design Website</h3>
+        </header>
+        <figure class="pj-shot" style="--ar:16 / 9"><a class="pj-link" href="https://madinterior.systeme.io/3603c0bc" target="_blank" rel="noopener noreferrer"><img src="assets/img/project-omega.webp" alt="Interior design website concept: the homepage headline reads Luxury Minimalist Interior Design For Modern Living, over a night photo of a modern house." width="1280" height="720" loading="lazy" decoding="async" style="object-position:center"><span class="pj-hint" aria-hidden="true">View live</span></a><figcaption>Homepage screenshot</figcaption></figure>
+        <div class="pj-copy">
+          <div class="pj-desc-wrap"><p class="pj-desc" data-rise>A website concept for an interior design business, built around visual storytelling and the presentation of design work.</p><p class="pj-desc" data-rise>The layout gives imagery room to lead while organizing the business’s services and project information into a clear browsing experience. The goal is to let visitors understand the brand’s design direction without overwhelming them with unnecessary content.</p></div>
+          <div class="pj-focus" data-rise>
+            <p class="ab-k">Focus areas</p>
+            <ul><li>Image-led website design</li><li>Interior design portfolio presentation</li><li>Visual hierarchy and composition</li><li>Brand consistency</li><li>Responsive user experience</li></ul>
+          </div>
+          <div class="pj-actions" data-rise>
+            <a class="cta cta-solid" href="https://madinterior.systeme.io/3603c0bc" target="_blank" rel="noopener noreferrer"><span>View Live Project</span><span class="sr-only"> Interior Design Website (opens in a new tab)</span><svg width="20" height="20" aria-hidden="true"><use href="#i-up-right"/></svg></a>
+            <a class="cta cta-ghost" href="case-interior-design-website.html"><span>View Case Study</span><span class="sr-only"> for Interior Design Website</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="ab pj pj-d ab-dark" id="brightwater-legal" aria-labelledby="brightwater-legal-title">
+      <div class="ab-in pj-in">
+        <header class="pj-head">
+          <p class="pj-meta" data-rise><span class="pj-n" aria-hidden="true">04</span><span class="pj-cat">Legal Services / Professional Services</span><span class="pj-type">Website Concept</span></p>
+          <h3 id="brightwater-legal-title" data-rise>Brightwater Legal</h3>
+        </header>
+        <figure class="pj-shot" style="--ar:16 / 9"><a class="pj-link" href="https://birghtwater.systeme.io/brihtwaterbymadfunneldemo" target="_blank" rel="noopener noreferrer"><img src="assets/img/project-brightwater.webp" alt="Brightwater Legal website concept: the homepage headline reads Family law advice for people navigating separation, divorce and parenting matters in Gold Coast, over a photo of a couple embracing." width="1280" height="720" loading="lazy" decoding="async" style="object-position:center"><span class="pj-hint" aria-hidden="true">View live</span></a><figcaption>Homepage screenshot</figcaption></figure>
+        <div class="pj-copy">
+          <div class="pj-desc-wrap"><p class="pj-desc" data-rise>A website concept for a legal services practice, designed to present its services with clarity and establish a more professional, credible online presence.</p><p class="pj-desc" data-rise>The layout prioritizes structured service information, readable content, and straightforward navigation to help prospective clients understand the firm’s areas of practice and find relevant information.</p></div>
+          <div class="pj-focus" data-rise>
+            <p class="ab-k">Focus areas</p>
+            <ul><li>Professional brand presentation</li><li>Legal service organization</li><li>Content hierarchy and readability</li><li>Trust-focused user experience</li><li>Responsive website layout</li></ul>
+          </div>
+          <div class="pj-actions" data-rise>
+            <a class="cta cta-menu" href="https://birghtwater.systeme.io/brihtwaterbymadfunneldemo" target="_blank" rel="noopener noreferrer"><span>View Live Project</span><span class="sr-only"> Brightwater Legal (opens in a new tab)</span><svg width="20" height="20" aria-hidden="true"><use href="#i-up-right"/></svg></a>
+            <a class="cta cta-line" href="case-brightwater-legal.html"><span>View Case Study</span><span class="sr-only"> for Brightwater Legal</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="ab pj pj-e ab-amber" id="clothing-ecommerce" aria-labelledby="clothing-ecommerce-title">
+      <div class="ab-in pj-in">
+        <header class="pj-head">
+          <p class="pj-meta" data-rise><span class="pj-n" aria-hidden="true">05</span><span class="pj-cat">Fashion / E-commerce</span><span class="pj-type">E-commerce Website Concept</span></p>
+          <h3 id="clothing-ecommerce-title" data-rise>Clothing E‑commerce</h3>
+        </header>
+        <figure class="pj-shot" style="--ar:16 / 9"><a class="pj-link" href="https://madfunneldesignecommerce.systeme.io/clothingdemo" target="_blank" rel="noopener noreferrer"><img src="assets/img/project-clothing.webp" alt="Clothing e-commerce website concept: the homepage headline reads Fade Into Black, over a photo of two people in streetwear on a city rooftop, with a Shop the Drop button." width="1280" height="720" loading="lazy" decoding="async" style="object-position:center"><span class="pj-hint" aria-hidden="true">View live</span></a><figcaption>Homepage screenshot</figcaption></figure>
+        <div class="pj-copy">
+          <div class="pj-desc-wrap"><p class="pj-desc" data-rise>An e-commerce website concept for a clothing brand, built around product presentation and a focused online shopping experience.</p><p class="pj-desc" data-rise>The design brings together brand styling, product-focused layouts, and clear shopping pathways to help visitors browse collections and explore products without unnecessary distractions.</p></div>
+          <div class="pj-focus" data-rise>
+            <p class="ab-k">Focus areas</p>
+            <ul><li>Fashion brand presentation</li><li>Product display and merchandising</li><li>E-commerce user experience</li><li>Shopping navigation</li><li>Responsive storefront design</li></ul>
+          </div>
+          <div class="pj-actions" data-rise>
+            <a class="cta cta-solid" href="https://madfunneldesignecommerce.systeme.io/clothingdemo" target="_blank" rel="noopener noreferrer"><span>View Live Project</span><span class="sr-only"> Clothing E-commerce (opens in a new tab)</span><svg width="20" height="20" aria-hidden="true"><use href="#i-up-right"/></svg></a>
+            <a class="cta cta-ghost" href="case-clothing-ecommerce.html"><span>View Case Study</span><span class="sr-only"> for Clothing E-commerce</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="ab pj pj-f ab-white" id="black-chauffeur" aria-labelledby="black-chauffeur-title">
+      <div class="ab-in pj-in">
+        <header class="pj-head">
+          <p class="pj-meta" data-rise><span class="pj-n" aria-hidden="true">06</span><span class="pj-cat">Luxury Transportation / Chauffeur Services</span><span class="pj-type">Website Concept</span></p>
+          <h3 id="black-chauffeur-title" data-rise>Black Chauffeur</h3>
+        </header>
+        <figure class="pj-shot" style="--ar:16 / 9"><a class="pj-link" href="https://mad-car.systeme.io/blackchauffeur" target="_blank" rel="noopener noreferrer"><img src="assets/img/project-chauffeur.webp" alt="Black Chauffeur website concept: the homepage headline reads Feel the Luxury, Own Every Arrival, over the dark interior of a luxury car, with a Book Now button." width="1280" height="720" loading="lazy" decoding="async" style="object-position:center"><span class="pj-hint" aria-hidden="true">View live</span></a><figcaption>Homepage screenshot</figcaption></figure>
+        <div class="pj-copy">
+          <div class="pj-desc-wrap"><p class="pj-desc" data-rise>A website concept for a private chauffeur service, designed to communicate a premium transportation offering through a refined visual direction and clear service presentation.</p><p class="pj-desc" data-rise>The experience focuses on presenting the service, communicating its value, and making the next step toward an inquiry or booking easy to understand.</p></div>
+          <div class="pj-focus" data-rise>
+            <p class="ab-k">Focus areas</p>
+            <ul><li>Premium service positioning</li><li>Chauffeur service presentation</li><li>Booking-oriented user experience</li><li>Strong visual hierarchy</li><li>Responsive front-end design</li></ul>
+          </div>
+          <div class="pj-actions" data-rise>
+            <a class="cta cta-solid" href="https://mad-car.systeme.io/blackchauffeur" target="_blank" rel="noopener noreferrer"><span>View Live Project</span><span class="sr-only"> Black Chauffeur (opens in a new tab)</span><svg width="20" height="20" aria-hidden="true"><use href="#i-up-right"/></svg></a>
+            <a class="cta cta-ghost" href="case-black-chauffeur.html"><span>View Case Study</span><span class="sr-only"> for Black Chauffeur</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </article>
+    </section>
+
+    <section class="ab ab-dark pj-dm" id="demonstrate" aria-labelledby="demonstrate-title">
+      <div class="ab-in ab-split">
+        <header class="ab-head">
+          <p class="ab-k" data-rise>Across the six</p>
+          <h2 id="demonstrate-title">What the projects demonstrate</h2>
+        </header>
+        <div class="ab-body">
+          <p class="ab-lead" data-rise>Each build starts from the business it is for.</p>
+          <p data-rise>The sectors differ, so the websites do too. The same questions come first every time: what the page needs to say, who is reading it, and what they should be able to do next.</p>
+        </div>
+      </div>
+      <ul class="dm-rows">
+        <li>
+          <h3 data-rise>A visual direction that belongs to the business</h3>
+          <div data-rise>
+            <p>Industrial typography and layout for NICRO, image-led composition for the interior design site, product-led presentation for the clothing store. The look comes from the sector, not from a template.</p>
+            <p class="dm-refs"><span>Seen in</span><a href="#nicro-industrial">NICRO Industrial</a><a href="#interior-design-website">Interior Design Website</a><a href="#clothing-ecommerce">Clothing E-commerce</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 data-rise>Structure that builds trust before the first message</h3>
+          <div data-rise>
+            <p>The construction and legal concepts are organized so a visitor sees what is offered and why it can be trusted, with clear calls to action and readable structure along the way. The chauffeur concept does the same for a premium service, with a path toward booking.</p>
+            <p class="dm-refs"><span>Seen in</span><a href="#construction-website">Construction Website</a><a href="#brightwater-legal">Brightwater Legal</a><a href="#black-chauffeur">Black Chauffeur</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 data-rise>Motion that guides attention</h3>
+          <div data-rise>
+            <p>On the NICRO concept, GSAP drives the motion and Lenis handles smooth scrolling, alongside custom front-end details. Motion is there to point at what matters, not to decorate.</p>
+            <p class="dm-refs"><span>Seen in</span><a href="#nicro-industrial">NICRO Industrial</a></p>
+          </div>
+        </li>
+        <li>
+          <h3 data-rise>Layouts that hold up on every screen</h3>
+          <div data-rise>
+            <p>Each concept is built to be responsive, so layout, imagery and calls to action adapt from phone to desktop. The storefront and the construction site are two examples of that approach.</p>
+            <p class="dm-refs"><span>Seen in</span><a href="#construction-website">Construction Website</a><a href="#clothing-ecommerce">Clothing E-commerce</a><a href="#black-chauffeur">Black Chauffeur</a></p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="ab ab-amber ab-cta" id="lets-talk" aria-labelledby="talk-title">
+      <span class="ab-bar ab-bar-l" aria-hidden="true"></span>
+      <span class="ab-bar ab-bar-r" aria-hidden="true"></span>
+      <div class="ab-in">
+        <h2 id="talk-title">Have a project in mind?</h2>
+        <div class="ab-cta-body">
+          <p class="ab-lead" data-rise>Let&rsquo;s discuss what your website needs to do.</p>
+          <p data-rise>Tell me what you&rsquo;re building, what isn&rsquo;t working, or what you need to connect, and I&rsquo;ll get back to you with a practical next step.</p>
+          <div class="ab-cta-actions" data-rise>
+            <a class="cta cta-solid" href="https://calendly.com/-aldrichmatthew/15mins"><span>Book a Free Strategy Call</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="cta cta-ghost" href="#contact"><span>Send a Project Inquiry</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <dl class="cta-facts" data-rise>
+          <div><dt>Email</dt><dd><a href="mailto:madfunneldesign@gmail.com">madfunneldesign@gmail.com</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+639064888321">+63 906 488 8321</a></dd></div>
+          <div><dt>Based in</dt><dd>The Philippines, working with businesses worldwide</dd></div>
+          <div><dt>Local time</dt><dd>Manila <time data-clock datetime="">--:--</time></dd></div>
+        </dl>
+      </div>
+    </section>
+
+
+    <Contact />
+  
+</Base>

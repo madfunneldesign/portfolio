@@ -1,0 +1,252 @@
+---
+import Base from "../layouts/Base.astro";
+import Contact from "../components/Contact.astro";
+---
+<Base bodyClass="page-about" current="about">
+<Fragment slot="meta">
+<title>About Aldrich Matthew | Website &amp; Funnel Designer | MAD Funnel Design</title>
+  <meta name="description" content="Aldrich Matthew is an independent website designer and developer in the Philippines. He builds business websites, landing pages, funnels and CRM automation for coaches and service businesses.">
+  <link rel="canonical" href="https://www.madfunneldesign.com/about.html">
+  <meta name="author" content="Aldrich Matthew Domingo">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#1C1C1C">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="MAD Funnel Design">
+  <meta property="og:url" content="https://www.madfunneldesign.com/about.html">
+  <meta property="og:title" content="About Aldrich Matthew | Website &amp; Funnel Designer | MAD Funnel Design">
+  <meta property="og:description" content="An independent website designer and developer who builds the pages people see and the systems that handle what happens after they visit.">
+  <meta property="og:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MAD Funnel Design: website and funnel design for coaches and service businesses">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Aldrich Matthew | Website &amp; Funnel Designer">
+  <meta name="twitter:description" content="An independent website designer and developer based in the Philippines.">
+  <meta name="twitter:image" content="https://www.madfunneldesign.com/assets/img/og.png">
+</Fragment>
+<Fragment slot="jsonld">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://www.madfunneldesign.com/about.html#page",
+      "url": "https://www.madfunneldesign.com/about.html",
+      "name": "About Aldrich Matthew",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://www.madfunneldesign.com/#website" },
+      "about": { "@id": "https://www.madfunneldesign.com/#person" },
+      "primaryImageOfPage": { "@id": "https://www.madfunneldesign.com/about.html#portrait" }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.madfunneldesign.com/about.html#portrait",
+      "contentUrl": "https://www.madfunneldesign.com/assets/img/aldrich-about.webp",
+      "caption": "Aldrich Matthew, website designer and developer"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.madfunneldesign.com/#person",
+      "name": "Aldrich Matthew Domingo",
+      "alternateName": "Aldrich Matthew",
+      "jobTitle": "Website & Funnel Designer",
+      "url": "https://www.madfunneldesign.com/about.html",
+      "image": "https://www.madfunneldesign.com/assets/img/aldrich-about.webp",
+      "address": { "@type": "PostalAddress", "addressCountry": "PH" },
+      "knowsAbout": ["Website design", "Landing page design", "Sales funnels", "Front-end development", "CRM automation", "Systeme.io", "GoHighLevel", "Shopify", "GSAP"],
+      "sameAs": [
+        "https://www.linkedin.com/in/aldrich-matthew-domingo-a287672ab",
+        "https://www.instagram.com/drichmatthew/",
+        "https://www.facebook.com/AldrichMatthewDomingoOfficial/",
+        "https://www.tiktok.com/@madfunneldesign"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.madfunneldesign.com/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.madfunneldesign.com/about.html" }
+      ]
+    }
+  ]
+}
+  </script>
+</Fragment>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-down-right" viewBox="0 0 24 24"><path d="M5 5l13 13M18 8v10H8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
+
+    <section class="hero hero-about" aria-labelledby="about-title">
+      <span class="hbar hbar-1" aria-hidden="true"></span>
+      <span class="hbar hbar-2" aria-hidden="true"></span>
+      <span class="hbar hbar-3" aria-hidden="true"></span>
+      <span class="hbar hbar-4" aria-hidden="true"></span>
+
+      <div class="ah-copy">
+        <p class="ah-label" data-reveal>About me</p>
+        <h1 id="about-title" data-speakable>
+          <span class="line">About</span>
+          <span class="line line-2">Aldrich Matthew</span>
+        </h1>
+        <p class="ah-intro" data-reveal data-speakable>I build websites and funnels that help businesses grow, with clean design, smart development, and a focus on results.</p>
+      </div>
+
+      <figure class="ah-portrait" data-reveal>
+        <svg class="ah-ring" viewBox="0 0 600 700" aria-hidden="true" focusable="false"><path d="M150 360C90 210 190 60 340 70c140 10 235 130 215 280-18 140-110 240-230 290" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>
+        <img src="assets/img/aldrich-about.webp" alt="Portrait of Aldrich Matthew, website and funnel designer and developer, looking down at the camera" width="1000" height="1192" decoding="async" fetchpriority="high">
+      </figure>
+
+      <a class="ah-down" href="#intro" aria-label="Scroll to the introduction"><svg width="34" height="34" aria-hidden="true"><use href="#i-down-right"/></svg></a>
+    </section>
+
+    <section class="ab ab-dark" id="intro" aria-labelledby="intro-title">
+      <div class="ab-in ab-split">
+        <header class="ab-head">
+          <p class="ab-k" data-rise>About</p>
+          <h2 id="intro-title">I&rsquo;m Aldrich Matthew.</h2>
+        </header>
+        <div class="ab-body">
+          <p class="ab-lead" data-rise data-speakable>I design and build websites, not just the screens people see.</p>
+          <p data-rise>I&rsquo;m an independent website designer and developer based in the Philippines. My work sits between visual design, front-end development, and the systems that handle what happens after someone visits a website.</p>
+          <p data-rise>I work with businesses that need more than an online brochure, from presenting their services properly to giving potential customers a clearer way to make an inquiry.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab ab-amber" id="thinking" aria-labelledby="thinking-title">
+      <span class="ab-bar ab-bar-l" aria-hidden="true"></span>
+      <span class="ab-bar ab-bar-r" aria-hidden="true"></span>
+      <div class="ab-in ab-split">
+        <header class="ab-head">
+          <p class="ab-k" data-rise>How I think about websites</p>
+          <h2 id="thinking-title">A good-looking website isn&rsquo;t enough.</h2>
+        </header>
+        <div class="ab-body">
+          <p data-rise>A visitor shouldn&rsquo;t have to figure out what a business does, search through confusing menus, or guess where to go next.</p>
+          <p data-rise>I pay attention to how information is presented, how each page connects, and what happens when someone decides to take action.</p>
+          <p class="ab-strong" data-rise>That thinking carries through the entire build, from the first layout to the final form submission.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ab ab-dark" id="work-i-do" aria-labelledby="doing-title">
+      <div class="ab-in">
+        <header class="ab-head ab-head-wide">
+          <p class="ab-k" data-rise>The work I do</p>
+          <h2 id="doing-title">Different builds. Different requirements.</h2>
+        </header>
+        <ol class="ab-rows">
+          <li data-rise>
+            <span class="ab-n">01</span>
+            <h3>Business websites</h3>
+            <p>Custom-designed websites that give businesses a clear way to present their services, work, and contact information.</p>
+          </li>
+          <li data-rise>
+            <span class="ab-n">02</span>
+            <h3>Landing pages &amp; funnels</h3>
+            <p>Pages structured around a specific offer, campaign, or customer journey, with a clear path from the first visit to the intended action.</p>
+          </li>
+          <li data-rise>
+            <span class="ab-n">03</span>
+            <h3>CRM &amp; automation</h3>
+            <p>Form connections, lead capture, tagging, follow-up workflows, and integrations that reduce the need to handle every inquiry manually.</p>
+          </li>
+          <li data-rise>
+            <span class="ab-n">04</span>
+            <h3>Interactive front-end development</h3>
+            <p>Custom HTML, CSS, and JavaScript, with GSAP and Lenis when motion and interaction serve a real purpose.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="ab ab-white" id="tools" aria-labelledby="tools-title">
+      <div class="ab-in">
+        <div class="ab-split">
+          <header class="ab-head">
+            <p class="ab-k" data-rise>The tools behind the build</p>
+            <h2 id="tools-title">I choose the stack around the project.</h2>
+          </header>
+          <div class="ab-body">
+            <p data-rise>I work across website platforms and custom front-end code. The setup depends on what needs to be built, what needs to connect, and how much control the project requires.</p>
+          </div>
+        </div>
+
+        <ul class="tool-grid" aria-label="Tools and platforms I work with">
+            <li data-rise><img src="assets/img/tools/canva.webp" alt="Canva logo" width="200" height="200" loading="lazy" decoding="async"><span>Canva</span></li>
+            <li data-rise><img src="assets/img/tools/capcut.webp" alt="CapCut logo" width="200" height="200" loading="lazy" decoding="async"><span>CapCut</span></li>
+            <li data-rise><img src="assets/img/tools/gohighlevel.webp" alt="GoHighLevel logo, three rising arrows" width="200" height="200" loading="lazy" decoding="async"><span>GoHighLevel</span></li>
+            <li data-rise><img src="assets/img/tools/n8n.webp" alt="n8n logo" width="200" height="200" loading="lazy" decoding="async"><span>n8n</span></li>
+            <li data-rise><img src="assets/img/tools/shopify.webp" alt="Shopify logo, a shopping bag with an S" width="200" height="200" loading="lazy" decoding="async"><span>Shopify</span></li>
+            <li data-rise><img src="assets/img/tools/systeme-io.webp" alt="Systeme.io logo" width="200" height="200" loading="lazy" decoding="async"><span>Systeme.io</span></li>
+            <li data-rise><img src="assets/img/tools/zapier.webp" alt="Zapier logo, an orange asterisk" width="200" height="200" loading="lazy" decoding="async"><span>Zapier</span></li>
+        </ul>
+
+        <dl class="tool-list">
+          <div data-rise><dt>Platforms</dt><dd>Systeme.io, GoHighLevel, Shopify</dd></div>
+          <div data-rise><dt>Development</dt><dd>HTML, CSS, JavaScript, Shopify Liquid</dd></div>
+          <div data-rise><dt>Motion</dt><dd>GSAP, Lenis</dd></div>
+          <div data-rise><dt>Automation</dt><dd>Systeme.io workflows, GoHighLevel, Zapier, Make</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="ab ab-dark" id="how-it-works" aria-labelledby="steps-title">
+      <div class="ab-in">
+        <header class="ab-head ab-head-wide">
+          <p class="ab-k" data-rise>From first discussion to final build</p>
+          <h2 id="steps-title">Here&rsquo;s how a project takes shape.</h2>
+        </header>
+        <ol class="ab-steps">
+          <li data-rise>
+            <span class="ab-n">01</span>
+            <h3>Understand</h3>
+            <p>We discuss the business, the people you&rsquo;re trying to reach, and what the website needs to accomplish.</p>
+          </li>
+          <li data-rise>
+            <span class="ab-n">02</span>
+            <h3>Structure</h3>
+            <p>I work out the page hierarchy, content flow, visual direction, and functionality before development begins.</p>
+          </li>
+          <li data-rise>
+            <span class="ab-n">03</span>
+            <h3>Develop</h3>
+            <p>I build the approved direction, implement the interactions, and connect the required forms, integrations, and workflows.</p>
+          </li>
+          <li data-rise>
+            <span class="ab-n">04</span>
+            <h3>Test &amp; launch</h3>
+            <p>I check the website across screen sizes, test its functionality and integrations, then prepare it for launch.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="ab ab-amber ab-cta" id="lets-talk" aria-labelledby="talk-title">
+      <span class="ab-bar ab-bar-l" aria-hidden="true"></span>
+      <span class="ab-bar ab-bar-r" aria-hidden="true"></span>
+      <div class="ab-in">
+        <h2 id="talk-title">Let&rsquo;s talk about the build.</h2>
+        <div class="ab-cta-body">
+          <p class="ab-lead" data-rise>Have a website, landing page, or business process that needs attention?</p>
+          <p data-rise>Tell me what you&rsquo;re working on. We can start with the requirements and work out whether I&rsquo;m the right person to build it.</p>
+          <div class="ab-cta-actions" data-rise>
+            <a class="cta cta-solid" href="https://calendly.com/-aldrichmatthew/15mins"><span>Book Free Strategy Call</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="cta cta-ghost" href="#contact"><span>Send a message</span><svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <dl class="cta-facts" data-rise>
+          <div><dt>Email</dt><dd><a href="mailto:madfunneldesign@gmail.com">madfunneldesign@gmail.com</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+639064888321">+63 906 488 8321</a></dd></div>
+          <div><dt>Based in</dt><dd>The Philippines, working with businesses worldwide</dd></div>
+          <div><dt>Local time</dt><dd>Manila <time data-clock datetime="">--:--</time></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <Contact />
+  
+</Base>
