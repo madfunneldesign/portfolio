@@ -12,6 +12,7 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="p:domain_verify" content="0a18bdfaf694961dbe646c53ad48d8ce">
 
   <slot name="meta" />
   <link rel="icon" href="favicon.png" type="image/png" sizes="120x120">
@@ -25,7 +26,9 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
     document.documentElement.classList.add("js");
     try {
       // The loading screen plays once per visit. It is skipped for reduced motion and for links that land on a section.
-      if (sessionStorage.getItem("mfd-pre") || location.hash || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // Adding ?preloader to the address plays it again (handy for testing); reduced motion is always respected.
+      var force = /[?&]preloader(=|&|$)/.test(location.search);
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches || (!force && (sessionStorage.getItem("mfd-pre") || location.hash))) {
         document.documentElement.classList.add("no-pre");
       }
     } catch (e) {
@@ -37,8 +40,41 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
   </script>
 
   <slot name="jsonld" />
+
+  <!-- Analytics. All three load asynchronously, so they do not hold up the page. -->
+  <!-- Google tag (gtag.js) -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-KMTM0S15G4"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KMTM0S15G4');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script is:inline type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vpbr5gjf7k");
+  </script>
+  <!-- Meta Pixel Code -->
+  <script is:inline>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1454874593031556');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
 </head>
 <body class={bodyClass || undefined}>
+  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1454874593031556&ev=PageView&noscript=1"></noscript>
   <Preloader />
   <Nav current={current} home={home} />
 
