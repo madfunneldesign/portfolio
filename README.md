@@ -34,6 +34,16 @@ Messages from the contact form are saved to a Supabase table called `inquiries`.
 1. The table, its security rules and a spam limit (3 messages per email per hour) are in `supabase/migrations/`. With the Supabase GitHub integration on, pushing to `main` applies them; otherwise paste the file into Supabase > SQL Editor and run it once.
 2. In Vercel > Project > Settings > Environment Variables add `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` (both under Supabase > Project Settings > API; see `.env.example`), then redeploy.
 3. Read the messages in Supabase > Table Editor > `inquiries`. Use the `status` and `notes` columns to track your follow-up.
+
+### Email alert for new messages
+Each new row in `inquiries` sends you an email through Resend (resend.com). Replying to that email replies straight to the visitor.
+1. Create a free Resend account with the email that should receive alerts, then API Keys > Create API key (Sending access).
+2. Run `supabase/migrations/20261115120000_email_notification.sql` once in Supabase > SQL Editor (safe to run again).
+3. Store the key in Supabase Vault (never in git). In the SQL Editor run: `select vault.create_secret('re_YOUR_KEY', 'resend_api_key');`
+4. Test by adding a row (SQL Editor, `insert into public.inquiries (name, email, project, timeline, message) values ('Test', 'test@example.com', 'Website', 'Soon', 'Testing the email alert.');`), then check your inbox. To see what Resend answered: `select status_code, content from net._http_response order by created desc limit 1;`
+5. Optional, once your domain is verified in Resend: `select vault.create_secret('MAD Funnel Design <hello@madfunneldesign.com>', 'notify_from');` and, to change the recipient, `select vault.create_secret('someone@example.com', 'notify_to');`
+If the key is missing or Resend is down, the message is still saved and the visitor still sees the confirmation.
+
 The anon key is public by design. The table only lets it add a message: it cannot read, edit or delete anything. Until the two variables are set, the form falls back to opening the visitor's email app.
 
 ## Loading screen and analytics
