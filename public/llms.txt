@@ -91,7 +91,7 @@ Custom HTML, CSS and JavaScript with GSAP animation and Lenis smooth scrolling. 
 ## Links
 
 - Website: https://www.madfunneldesign.com/
-- Brand identity system: https://www.madfunneldesign.com/brand-identity-system-30-minutes
+- Brand identity system: https://madfunneldesign.systeme.io/brand-identity-system-30-minutes
 - LinkedIn: https://www.linkedin.com/in/aldrich-matthew-domingo-a287672ab
 - Instagram: https://www.instagram.com/drichmatthew/
 - TikTok: https://www.tiktok.com/@madfunneldesign

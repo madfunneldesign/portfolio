@@ -26,7 +26,7 @@ if (!reduceMotion) {
 }
 
 /* ---------------------------------------------------------------
-   Loading screen: the amber logo fills from the bottom like water, 0 to 100, then the screen lifts away.
+   Loading screen: the amber logo fills from the bottom like water, 0 to 100, then the screen lifts away like a curtain, with a yellow line on its bottom edge.
    The hero intro waits for it (window.__preloaded). It plays on arrival and refresh; the page head decides whether to skip it.
 ---------------------------------------------------------------- */
 let preResolve = () => {};
@@ -96,7 +96,7 @@ window.__preloaded = new Promise((resolve) => (preResolve = resolve));
           .to(pre.querySelector(".pl-count"), { yPercent: 30, autoAlpha: 0, duration: 0.5, ease: "power2.in" }, 0)
           .to(pre.querySelector(".pl-label"), { autoAlpha: 0, duration: 0.3 }, 0)
           .to(pre.querySelector(".pl-logo"), { scale: 0.94, duration: 0.7, ease: "power2.in" }, 0)
-          .to(pre, { clipPath: "inset(0 0 100% 0)", duration: 0.85, ease: "expo.inOut" }, 0.3)
+          .to(pre, { y: () => -(window.innerHeight + 12), duration: 0.9, ease: "expo.inOut" }, 0.3)
           .add(() => preResolve(), 0.6)
           .add(() => {
             root.classList.add("no-pre");

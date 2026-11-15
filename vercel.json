@@ -1,6 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/brand-identity-system-30-minutes",
+      "destination": "https://madfunneldesign.systeme.io/brand-identity-system-30-minutes",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -23,11 +30,11 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self' mailto:"
+          "value": "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'"
         },
         {
           "key": "Content-Security-Policy-Report-Only",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.google-analytics.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://www.facebook.com; font-src 'self' data:; connect-src 'self' https://cmgrswxhptasszrvevak.supabase.co https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://c.bing.com https://www.facebook.com https://connect.facebook.net; frame-src 'none'"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms https://connect.facebook.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com https://*.clarity.ms https://c.bing.com https://www.facebook.com; font-src 'self' data:; connect-src 'self' https://cmgrswxhptasszrvevak.supabase.co https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://*.g.doubleclick.net https://www.google.com https://mpc-pilot-2-s6uit34pua-ue.a.run.app https://*.clarity.ms https://c.bing.com https://www.facebook.com https://connect.facebook.net; frame-src 'none'"
         },
         {
           "key": "Permissions-Policy",

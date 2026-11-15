@@ -5000,7 +5000,8 @@ html:not(.js) .faq-a p {
 /* =====================================================================
    Loading screen
    The black logo is the base. An amber copy of it fills from the bottom like water, with a counter from 0 to 100.
-   It plays once per visit and is skipped for reduced motion.
+   When it reaches 100 the whole screen lifts away like a curtain, with a yellow line on its bottom edge.
+   It plays on arrival and refresh, and is skipped for reduced motion.
    ===================================================================== */
 .preloader {
   display: none;
@@ -5016,7 +5017,22 @@ html.js:not(.no-pre) .preloader {
   place-items: center;
   background: #fafaf7;
   color: #1C1C1C;
-  clip-path: inset(0 0 0 0);
+  will-change: transform;
+}
+/* The yellow line on the bottom edge of the curtain, with a thin dark keyline under it so it still reads against the yellow pages behind.
+   It sits just outside the screen until the curtain lifts. */
+html.js:not(.no-pre) .preloader::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(-1 * (var(--pl-edge) + var(--pl-trim)));
+  height: calc(var(--pl-edge) + var(--pl-trim));
+  background: linear-gradient(to bottom, #EFA831 var(--pl-edge), #1C1C1C 0);
+}
+html.js:not(.no-pre) {
+  --pl-edge: clamp(4px, 0.3vw + 2px, 6px);
+  --pl-trim: 3px;
 }
 html.reveal-fallback .preloader {
   display: none !important;
