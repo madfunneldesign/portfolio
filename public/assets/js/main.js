@@ -143,12 +143,14 @@ document.querySelectorAll('a[href^="#"]:not([data-project-link])').forEach((link
 
 /* ---------------------------------------------------------------
    3b. Button labels: each letter is a small two-line roller. On hover the letters roll up one after another,
-   and the second line (the accent colour on the outline button) rolls in. The real label stays in aria-label.
+   and the second line (the accent colour on the outline button) rolls in. The second line is drawn by CSS
+   (data-c), so the page text stays "Book Free Strategy Call", not doubled letters. The name for screen readers
+   sits on the button or link itself.
 ---------------------------------------------------------------- */
 document.querySelectorAll(".cta > span, .talk > span, .c-send > span, .c-big > span, .foot-call > span").forEach((label) => {
   label.parentElement.classList.add("has-roll");
   const text = label.textContent.trim();
-  label.setAttribute("aria-label", text);
+  if (!label.parentElement.hasAttribute("aria-label")) label.parentElement.setAttribute("aria-label", text);
   label.textContent = "";
   let n = 0;
   text.split(" ").forEach((word, w) => {
@@ -161,7 +163,10 @@ document.querySelectorAll(".cta > span, .talk > span, .c-send > span, .c-big > s
       ch.className = "ch";
       ch.setAttribute("aria-hidden", "true");
       ch.style.setProperty("--i", n++);
-      ch.innerHTML = "<i>" + c + "</i><i>" + c + "</i>";
+      const glyph = document.createElement("i");
+      glyph.textContent = c;
+      glyph.setAttribute("data-c", c);
+      ch.appendChild(glyph);
       holder.appendChild(ch);
     });
     label.appendChild(holder);

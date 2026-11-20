@@ -658,14 +658,19 @@ html.lenis body {
   width: 0.28em;
 }
 .has-roll .ch i {
-  display: block;
+  display: inline-block;
+  vertical-align: top;
   height: 1.2em;
   font-style: normal;
   line-height: 1.2;
   transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: calc(var(--i) * 24ms);
 }
-.has-roll .ch i + i {
+/* The letter that rolls in is drawn here, so it is not part of the page text. */
+.has-roll .ch i::after {
+  content: attr(data-c);
+  display: block;
+  height: 1.2em;
   color: var(--roll, currentColor);
 }
 .has-roll:hover .ch i,
