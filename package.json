@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "astro build && node scripts/csp.mjs --check",
+    "preview": "astro preview",
+    "csp": "node scripts/csp.mjs --write"
   },
   "dependencies": {
     "astro": "^7.4.12"

@@ -1333,6 +1333,57 @@ if (cform) {
     if (!e.target.closest("[data-dd]")) closeAll();
   });
 
+  // --- Bot check (Cloudflare Turnstile). It loads when someone first touches the form, so it never slows the page.
+  // It stays invisible unless Cloudflare needs more proof. Without a site key the form works as before.
+  const tsKey = cform.dataset.turnstile || "";
+  let tsToken = "";
+  let tsWidget = null;
+  let tsLoading = null;
+  const loadTurnstile = () => {
+    if (!tsKey) return Promise.resolve();
+    if (tsLoading) return tsLoading;
+    tsLoading = new Promise((resolve) => {
+      const s = document.createElement("script");
+      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      s.async = true;
+      s.onload = () => {
+        try {
+          tsWidget = window.turnstile.render(cform.querySelector("[data-turnstile-box]"), {
+            sitekey: tsKey,
+            theme: "dark",
+            appearance: "interaction-only",
+            callback: (t) => (tsToken = t),
+            "expired-callback": () => (tsToken = ""),
+            "error-callback": () => (tsToken = ""),
+          });
+        } catch (e) {}
+        resolve();
+      };
+      s.onerror = () => resolve();
+      document.head.appendChild(s);
+    });
+    return tsLoading;
+  };
+  const getToken = () =>
+    loadTurnstile().then(
+      () =>
+        new Promise((resolve) => {
+          const t0 = Date.now();
+          (function wait() {
+            if (tsToken) return resolve(tsToken);
+            if (Date.now() - t0 > 15000) return resolve("");
+            setTimeout(wait, 150);
+          })();
+        })
+    );
+  const resetTurnstile = () => {
+    tsToken = "";
+    if (tsWidget !== null && window.turnstile) {
+      try { window.turnstile.reset(tsWidget); } catch (e) {}
+    }
+  };
+  if (tsKey) ["focusin", "pointerdown"].forEach((ev) => cform.addEventListener(ev, loadTurnstile, { once: true }));
+
   // --- Validation
   const status = cform.querySelector("[data-cstatus]");
   const fieldOf = (el) => el.closest(".field");
@@ -1387,24 +1438,34 @@ if (cform) {
     const sbUrl = (cform.dataset.supabaseUrl || "").replace(/\/$/, "");
     const sbKey = cform.dataset.supabaseKey || "";
     const mail = cform.dataset.email;
-    if ((sbUrl && sbKey) || endpoint) {
+    if (tsKey || (sbUrl && sbKey) || endpoint) {
       submit.disabled = true;
-      say("Sending…");
+      say(tsKey ? "Checking that you are a person…" : "Sending…");
       try {
         let res;
-        if (sbUrl && sbKey) {
+        const row = {
+          name: data.name.trim(),
+          email: data.email.trim(),
+          business: (data.business || "").trim() || null,
+          website: (data.website || "").trim() || null,
+          project: data.project,
+          budget: data.budget || null,
+          timeline: data.timeline,
+          message: data.message.trim(),
+          source_page: location.pathname,
+        };
+        if (tsKey) {
+          // With the bot check on, the message goes through /api/contact, which verifies the check before saving it.
+          const token = await getToken();
+          if (!token) throw Object.assign(new Error("captcha"), { captcha: true });
+          say("Sending…");
+          res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(Object.assign({ "cf-turnstile-response": token, company_site: "" }, row)),
+          });
+        } else if (sbUrl && sbKey) {
           // Supabase: one row in the "inquiries" table (see supabase/migrations). The public key can only add rows, never read them.
-          const row = {
-            name: data.name.trim(),
-            email: data.email.trim(),
-            business: (data.business || "").trim() || null,
-            website: (data.website || "").trim() || null,
-            project: data.project,
-            budget: data.budget || null,
-            timeline: data.timeline,
-            message: data.message.trim(),
-            source_page: location.pathname,
-          };
           res = await fetch(sbUrl + "/rest/v1/inquiries", {
             method: "POST",
             headers: Object.assign({ "Content-Type": "application/json", apikey: sbKey, Prefer: "return=minimal" }, sbKey.indexOf("eyJ") === 0 ? { Authorization: "Bearer " + sbKey } : {}), // newer sb_publishable_ keys go in apikey only
@@ -1416,7 +1477,8 @@ if (cform) {
         if (!res.ok) {
           const detail = await res.text().catch(() => "");
           const err = new Error(String(res.status));
-          err.limited = /too many/i.test(detail);
+          err.limited = /too many|limited/i.test(detail);
+          err.captcha = /captcha/i.test(detail);
           throw err;
         }
         const first = data.name.trim().split(/\s+/)[0];
@@ -1432,10 +1494,13 @@ if (cform) {
       } catch (err) {
         if (err && err.limited) {
           say("You have sent a few messages in a short time. They have all reached me, and I will reply to the address you gave.");
+        } else if (err && err.captcha) {
+          say('I could not confirm the security check. Reload the page and try again, or email <a href="mailto:' + mail + '">' + mail + "</a>.", true);
         } else {
           say('That did not go through. Try again in a moment, or email <a href="mailto:' + mail + '">' + mail + "</a>.", true);
         }
       }
+      resetTurnstile();
       submit.disabled = false;
     } else {
       const lines = [

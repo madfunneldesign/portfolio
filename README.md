@@ -44,6 +44,22 @@ Each new row in `inquiries` sends you an email through Resend (resend.com). Repl
 5. Optional, once your domain is verified in Resend: `select vault.create_secret('MAD Funnel Design <hello@madfunneldesign.com>', 'notify_from');` and, to change the recipient, `select vault.create_secret('someone@example.com', 'notify_to');`
 If the key is missing or Resend is down, the message is still saved and the visitor still sees the confirmation.
 
+### Bot check on the contact form (Cloudflare Turnstile)
+Real visitors never see it. A bot is stopped before it can save a message or trigger an email.
+1. Cloudflare dashboard > Turnstile > Add widget. Hostnames: `madfunneldesign.com` and `www.madfunneldesign.com`. Mode: Managed. Copy the **Site key** (public) and the **Secret key**.
+2. Vercel > your project > Settings > Environment Variables (all environments), add:
+   - `PUBLIC_TURNSTILE_SITE_KEY` = the Site key
+   - `TURNSTILE_SECRET_KEY` = the Secret key
+   - `SUPABASE_URL` = `https://<your-project>.supabase.co`
+   - `SUPABASE_SERVICE_KEY` = Supabase > Project Settings > API Keys > **Secret key** (`sb_secret_...`). Never put it in git, in the website, or in a chat.
+3. Redeploy (the site key is baked in at build time) and send a test message. It is saved through `/api/contact`.
+4. Then run `supabase/manual/lock-down-form-inserts.sql` once in the Supabase SQL Editor. It stops direct inserts with the public key, so every message has to pass the bot check.
+Until `PUBLIC_TURNSTILE_SITE_KEY` is set, the form keeps saving directly with the public key as before.
+
+### Security policy (CSP)
+`vercel.json` enforces a Content Security Policy with no blanket inline-script allowance. The one inline script in the page head is allowed by its hash. If you edit an inline `<script>` in `src/layouts/Base.astro`, the build fails with a message until you run `npm run csp` and commit `vercel.json`.
+
+
 The anon key is public by design. The table only lets it add a message: it cannot read, edit or delete anything. Until the two variables are set, the form falls back to opening the visitor's email app.
 
 ## Loading screen and analytics

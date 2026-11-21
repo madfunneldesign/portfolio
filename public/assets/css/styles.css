@@ -5311,3 +5311,7 @@ html.reveal-fallback .preloader {
     transition: none;
   }
 }
+
+.c-turnstile:not(:empty) {
+  margin: 0 0 20px;
+}
