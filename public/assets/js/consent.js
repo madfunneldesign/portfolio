@@ -83,7 +83,10 @@
     var panel = box.querySelector("#consent-panel");
     var sign = box.querySelector("[data-more-sign]");
     var boxes = box.querySelectorAll("[data-cat]");
-    var timer;
+    var timers = [];
+    var decided = false;
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+    function stopTimers() { timers.forEach(clearTimeout); timers = []; }
     function setPanel(open) {
       panel.hidden = !open;
       more.setAttribute("aria-expanded", open ? "true" : "false");
@@ -94,7 +97,7 @@
       Array.prototype.forEach.call(boxes, function (b) { b.checked = !!c[b.getAttribute("data-cat")]; });
     }
     function show(manual) {
-      clearTimeout(timer);
+      stopTimers();
       fillSwitches();
       setPanel(!!manual);
       box.hidden = false;
@@ -106,6 +109,8 @@
       setTimeout(function () { box.hidden = true; }, 450);
     }
     function save(c) {
+      decided = true;
+      stopTimers(); // no pending "ask now" timer may bring the bar back after a choice
       write(c);
       hide();
       // A tracker that is already running but is now switched off: clear its cookies and load the page again without it.
@@ -129,9 +134,9 @@
     });
     if (!choice) {
       // First visit: ask after the loading screen, so the question never competes with it.
-      var go = function () { if (box.hidden) show(false); };
-      Promise.resolve(window.__preloaded).then(function () { timer = setTimeout(go, 900); });
-      timer = setTimeout(go, 8000);
+      var go = function () { if (!decided && !read() && box.hidden) show(false); };
+      Promise.resolve(window.__preloaded).then(function () { later(go, 900); });
+      later(go, 8000);
     }
   });
 })();
