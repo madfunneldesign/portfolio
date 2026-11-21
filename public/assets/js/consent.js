@@ -41,17 +41,19 @@
   // Trackers only run for what the visitor allowed. The choice is kept in this browser (local storage), not in a cookie.
   // It is saved as {"a":1,"m":0}: a = analytics (Google Analytics, Clarity), m = advertising measurement (Meta Pixel).
   var KEY = "mad-consent";
+  // Bump VERSION when the trackers or what they do change: everyone is then asked again.
+  var VERSION = 1;
+  var MAX_AGE = 365 * 24 * 60 * 60 * 1000; // a choice is asked again after 12 months
   function read() {
     try {
       var v = localStorage.getItem(KEY);
       if (!v) return null;
-      if (v === "granted") return { a: 1, m: 1 };
-      if (v === "denied") return { a: 0, m: 0 };
       var o = JSON.parse(v);
+      if (!o || o.v !== VERSION || !o.t || Date.now() - o.t > MAX_AGE || o.t > Date.now() + 86400000) return null; // old, expired or from an older policy
       return { a: o.a ? 1 : 0, m: o.m ? 1 : 0 };
     } catch (e) { return null; }
   }
-  function write(c) { try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {} }
+  function write(c) { try { localStorage.setItem(KEY, JSON.stringify({ a: c.a, m: c.m, v: VERSION, t: Date.now() })); } catch (e) {} }
   function startAllowed() {
     var c = read();
     if (!c) return;
@@ -69,6 +71,10 @@
     });
   }
   var choice = read();
+  try {
+    // A saved choice that is no longer valid (expired or older version): forget it and remove tracker cookies from it.
+    if (!choice && localStorage.getItem(KEY)) { localStorage.removeItem(KEY); clearTrackerCookies(); }
+  } catch (e) {}
   if (choice && (choice.a || choice.m)) {
     ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (t) {
       window.addEventListener(t, startAllowed, { once: true, passive: true });
