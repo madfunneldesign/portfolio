@@ -3008,7 +3008,8 @@ html:not(.js) .faq-a p {
   padding: 0;
   list-style: none;
 }
-.foot-col a {
+.foot-col a,
+.foot-col .foot-link {
   display: inline-block;
   padding: 3px 0;
   font-size: clamp(1.4rem, 1rem + 1.3vw, 2.15rem);
@@ -3019,10 +3020,12 @@ html:not(.js) .faq-a p {
   text-decoration: none;
   transition: color 0.25s ease;
 }
-.foot-col a:hover {
+.foot-col a:hover,
+.foot-col .foot-link:hover {
   color: #EFA831;
 }
 .foot-col a:focus-visible,
+.foot-col .foot-link:focus-visible,
 .foot-call:focus-visible {
   outline: 2px solid #1C1C1C;
   outline-offset: 3px;
@@ -5090,4 +5093,102 @@ html.reveal-fallback .preloader {
   font-size: 0.26em;
   letter-spacing: 0;
   color: #EFA831;
+}
+
+/* ---------- Cookie choice ---------- */
+.foot-col .foot-link {
+  margin: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.consent {
+  position: fixed;
+  left: var(--gutter);
+  bottom: var(--gutter);
+  z-index: 90;
+  width: min(400px, calc(100vw - 2 * var(--gutter)));
+  padding: 20px 20px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background: #1C1C1C;
+  color: #fff;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.consent[hidden] {
+  display: none;
+}
+.consent.is-in {
+  opacity: 1;
+  transform: none;
+}
+.consent-title {
+  margin: 0 0 6px;
+  font-family: var(--display);
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.consent-text {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
+}
+.consent-text a {
+  color: #fff;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.consent-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+.consent-btn {
+  min-height: 44px;
+  border: 1.5px solid #EFA831;
+  border-radius: 999px;
+  font: 600 0.9375rem/1 var(--font);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.consent-accept {
+  background: #EFA831;
+  color: #141414;
+}
+.consent-decline {
+  background: transparent;
+  color: #fff;
+}
+.consent-accept:hover {
+  background: #f6bd5c;
+}
+.consent-decline:hover {
+  background: rgba(239, 168, 49, 0.16);
+}
+.consent a:focus-visible,
+.consent-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+@media (max-width: 520px) {
+  .consent {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent {
+    transition: none;
+    transform: none;
+  }
 }

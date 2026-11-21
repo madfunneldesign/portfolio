@@ -4,6 +4,7 @@
 import Preloader from "../components/Preloader.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Consent from "../components/Consent.astro";
 
 const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
 ---
@@ -84,15 +85,74 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
         fbq('init', '1454874593031556');
         fbq('track', 'PageView');
       }
-      ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (t) {
-        window.addEventListener(t, startTrackers, { once: true, passive: true });
+      // Trackers only run after "Accept". The choice is kept in this browser (local storage), not in a cookie.
+      var KEY = "mad-consent";
+      function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+      function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+      function clearTrackerCookies() {
+        var host = location.hostname, hosts = [host, "." + host], parts = host.split(".");
+        while (parts.length > 2) { parts.shift(); hosts.push(parts.join("."), "." + parts.join(".")); }
+        document.cookie.split(";").forEach(function (c) {
+          var name = c.split("=")[0].trim();
+          if (!/^(_ga|_gid|_gat|_gcl|_fbp|_fbc|_clck|_clsk|CLID|ANONCHK|MUID|SM|MR|SRM_|_uet)/.test(name)) return;
+          hosts.forEach(function (d) { document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=" + d; });
+          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        });
+      }
+      function armTrackers() {
+        ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (t) {
+          window.addEventListener(t, startTrackers, { once: true, passive: true });
+        });
+        window.addEventListener("load", function () { setTimeout(startTrackers, 5000); });
+      }
+      var choice = read();
+      if (choice === "granted") armTrackers();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var box = document.getElementById("consent");
+        if (!box) return;
+        var accept = box.querySelector("[data-consent=accept]");
+        var decline = box.querySelector("[data-consent=decline]");
+        var timer;
+        function show(manual) {
+          clearTimeout(timer);
+          box.hidden = false;
+          requestAnimationFrame(function () { box.classList.add("is-in"); });
+          if (manual) accept.focus();
+        }
+        function hide() {
+          box.classList.remove("is-in");
+          setTimeout(function () { box.hidden = true; }, 350);
+        }
+        accept.addEventListener("click", function () {
+          write("granted");
+          hide();
+          startTrackers();
+        });
+        decline.addEventListener("click", function () {
+          var was = read() === "granted" || started;
+          write("denied");
+          hide();
+          if (was) {
+            // Trackers were already running: clear their cookies and load the page again without them.
+            clearTrackerCookies();
+            location.replace(location.href);
+          }
+        });
+        Array.prototype.forEach.call(document.querySelectorAll("[data-consent-open]"), function (el) {
+          el.addEventListener("click", function () { show(true); });
+        });
+        if (choice !== "granted" && choice !== "denied") {
+          // First visit: ask after the loading screen, so the question never competes with it.
+          var go = function () { if (box.hidden) show(false); };
+          Promise.resolve(window.__preloaded).then(function () { timer = setTimeout(go, 900); });
+          timer = setTimeout(go, 8000);
+        }
       });
-      window.addEventListener("load", function () { setTimeout(startTrackers, 5000); });
     })();
   </script>
 </head>
 <body class={bodyClass || undefined}>
-  <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1454874593031556&ev=PageView&noscript=1"></noscript>
   <Preloader />
   <Nav current={current} home={home} />
 
@@ -101,6 +161,7 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
   </main>
 
   <Footer home={home} />
+  <Consent />
 
   <!-- Animation libraries and site script are plain files in /public, loaded in the same order as before. -->
   <script is:inline defer src="assets/vendor/gsap.min.js"></script>

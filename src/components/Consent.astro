@@ -1,0 +1,11 @@
+---
+// Cookie choice. Nothing from Google, Microsoft or Meta loads until "Accept". The script is in the page head (Base.astro).
+---
+<section id="consent" class="consent" role="region" aria-labelledby="consent-title" hidden>
+  <p class="consent-title" id="consent-title">Analytics cookies?</p>
+  <p class="consent-text">I'd like to see which pages help visitors. Google Analytics, Microsoft Clarity and Meta only switch on if you accept. Declining changes nothing on the site. <a href="/privacy#p-04">How cookies are used</a></p>
+  <div class="consent-actions">
+    <button type="button" class="consent-btn consent-accept" data-consent="accept">Accept</button>
+    <button type="button" class="consent-btn consent-decline" data-consent="decline">Decline</button>
+  </div>
+</section>
