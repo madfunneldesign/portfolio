@@ -52,10 +52,10 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
        so they do not compete with the first paint. -->
   <script is:inline>
     (function () {
-      var started = false;
-      function startTrackers() {
-        if (started) return;
-        started = true;
+      var started = { a: false, m: false };
+      function startAnalytics() {
+        if (started.a) return;
+        started.a = true;
         // Google tag (gtag.js)
         var g = document.createElement("script");
         g.async = true;
@@ -72,7 +72,10 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "vpbr5gjf7k");
-
+      }
+      function startMeta() {
+        if (started.m) return;
+        started.m = true;
         // Meta Pixel
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -85,10 +88,27 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
         fbq('init', '1454874593031556');
         fbq('track', 'PageView');
       }
-      // Trackers only run after "Accept". The choice is kept in this browser (local storage), not in a cookie.
+
+      // Trackers only run for what the visitor allowed. The choice is kept in this browser (local storage), not in a cookie.
+      // It is saved as {"a":1,"m":0}: a = analytics (Google Analytics, Clarity), m = advertising measurement (Meta Pixel).
       var KEY = "mad-consent";
-      function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-      function write(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+      function read() {
+        try {
+          var v = localStorage.getItem(KEY);
+          if (!v) return null;
+          if (v === "granted") return { a: 1, m: 1 };
+          if (v === "denied") return { a: 0, m: 0 };
+          var o = JSON.parse(v);
+          return { a: o.a ? 1 : 0, m: o.m ? 1 : 0 };
+        } catch (e) { return null; }
+      }
+      function write(c) { try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {} }
+      function startAllowed() {
+        var c = read();
+        if (!c) return;
+        if (c.a) startAnalytics();
+        if (c.m) startMeta();
+      }
       function clearTrackerCookies() {
         var host = location.hostname, hosts = [host, "." + host], parts = host.split(".");
         while (parts.length > 2) { parts.shift(); hosts.push(parts.join("."), "." + parts.join(".")); }
@@ -99,50 +119,66 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
           document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
         });
       }
-      function armTrackers() {
-        ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (t) {
-          window.addEventListener(t, startTrackers, { once: true, passive: true });
-        });
-        window.addEventListener("load", function () { setTimeout(startTrackers, 5000); });
-      }
       var choice = read();
-      if (choice === "granted") armTrackers();
+      if (choice && (choice.a || choice.m)) {
+        ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (t) {
+          window.addEventListener(t, startAllowed, { once: true, passive: true });
+        });
+        window.addEventListener("load", function () { setTimeout(startAllowed, 5000); });
+      }
 
       document.addEventListener("DOMContentLoaded", function () {
         var box = document.getElementById("consent");
         if (!box) return;
-        var accept = box.querySelector("[data-consent=accept]");
-        var decline = box.querySelector("[data-consent=decline]");
+        var more = box.querySelector("[data-consent=more]");
+        var panel = box.querySelector("#consent-panel");
+        var sign = box.querySelector("[data-more-sign]");
+        var boxes = box.querySelectorAll("[data-cat]");
         var timer;
+        function setPanel(open) {
+          panel.hidden = !open;
+          more.setAttribute("aria-expanded", open ? "true" : "false");
+          sign.textContent = open ? "\u2212" : "+";
+        }
+        function fillSwitches() {
+          var c = read() || { a: 0, m: 0 };
+          Array.prototype.forEach.call(boxes, function (b) { b.checked = !!c[b.getAttribute("data-cat")]; });
+        }
         function show(manual) {
           clearTimeout(timer);
+          fillSwitches();
+          setPanel(!!manual);
           box.hidden = false;
           requestAnimationFrame(function () { box.classList.add("is-in"); });
-          if (manual) accept.focus();
+          if (manual) boxes[0].focus();
         }
         function hide() {
           box.classList.remove("is-in");
-          setTimeout(function () { box.hidden = true; }, 350);
+          setTimeout(function () { box.hidden = true; }, 450);
         }
-        accept.addEventListener("click", function () {
-          write("granted");
+        function save(c) {
+          write(c);
           hide();
-          startTrackers();
-        });
-        decline.addEventListener("click", function () {
-          var was = read() === "granted" || started;
-          write("denied");
-          hide();
-          if (was) {
-            // Trackers were already running: clear their cookies and load the page again without them.
+          // A tracker that is already running but is now switched off: clear its cookies and load the page again without it.
+          if ((started.a && !c.a) || (started.m && !c.m)) {
             clearTrackerCookies();
             location.replace(location.href);
+            return;
           }
+          startAllowed();
+        }
+        more.addEventListener("click", function () { setPanel(panel.hidden); });
+        box.querySelector("[data-consent=accept]").addEventListener("click", function () { save({ a: 1, m: 1 }); });
+        box.querySelector("[data-consent=refuse]").addEventListener("click", function () { save({ a: 0, m: 0 }); });
+        box.querySelector("[data-consent=save]").addEventListener("click", function () {
+          var c = { a: 0, m: 0 };
+          Array.prototype.forEach.call(boxes, function (b) { c[b.getAttribute("data-cat")] = b.checked ? 1 : 0; });
+          save(c);
         });
         Array.prototype.forEach.call(document.querySelectorAll("[data-consent-open]"), function (el) {
           el.addEventListener("click", function () { show(true); });
         });
-        if (choice !== "granted" && choice !== "denied") {
+        if (!choice) {
           // First visit: ask after the loading screen, so the question never competes with it.
           var go = function () { if (box.hidden) show(false); };
           Promise.resolve(window.__preloaded).then(function () { timer = setTimeout(go, 900); });

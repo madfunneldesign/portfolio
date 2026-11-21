@@ -1,11 +1,28 @@
 ---
-// Cookie choice. Nothing from Google, Microsoft or Meta loads until "Accept". The script is in the page head (Base.astro).
+// Cookie choice bar. Nothing from Google, Microsoft or Meta loads until the visitor allows it. The script is in the page head (Base.astro).
 ---
-<section id="consent" class="consent" role="region" aria-labelledby="consent-title" hidden>
-  <p class="consent-title" id="consent-title">Analytics cookies?</p>
-  <p class="consent-text">I'd like to see which pages help visitors. Google Analytics, Microsoft Clarity and Meta only switch on if you accept. Declining changes nothing on the site. <a href="/privacy#p-04">How cookies are used</a></p>
-  <div class="consent-actions">
-    <button type="button" class="consent-btn consent-accept" data-consent="accept">Accept</button>
-    <button type="button" class="consent-btn consent-decline" data-consent="decline">Decline</button>
+<section id="consent" class="consent" role="region" aria-label="Cookie preferences" hidden>
+  <div class="consent-in">
+    <div class="consent-main">
+      <p class="consent-text">This website uses cookies and similar technologies to understand site activity. For details on what information is collected and how it is used, please read the <a href="/privacy">Privacy Policy</a>.</p>
+      <div class="consent-actions">
+        <button type="button" class="consent-more" data-consent="more" aria-expanded="false" aria-controls="consent-panel">Customize <span aria-hidden="true" data-more-sign>+</span></button>
+        <button type="button" class="consent-btn consent-refuse" data-consent="refuse">Refuse</button>
+        <button type="button" class="consent-btn consent-accept" data-consent="accept">Accept All</button>
+      </div>
+    </div>
+    <div class="consent-panel" id="consent-panel" hidden>
+      <label class="consent-opt">
+        <input type="checkbox" role="switch" data-cat="a">
+        <span class="consent-sw" aria-hidden="true"></span>
+        <span class="consent-opt-t"><strong>Analytics</strong>Google Analytics and Microsoft Clarity show which pages are visited and how people use them.</span>
+      </label>
+      <label class="consent-opt">
+        <input type="checkbox" role="switch" data-cat="m">
+        <span class="consent-sw" aria-hidden="true"></span>
+        <span class="consent-opt-t"><strong>Advertising measurement</strong>Meta Pixel measures activity that comes from Meta ads.</span>
+      </label>
+      <button type="button" class="consent-btn consent-save" data-consent="save">Save Choices</button>
+    </div>
   </div>
 </section>
