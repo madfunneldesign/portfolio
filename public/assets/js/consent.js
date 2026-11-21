@@ -133,8 +133,18 @@
       el.addEventListener("click", function () { show(true); });
     });
     if (!choice) {
-      // First visit: ask after the loading screen, so the question never competes with it.
-      var go = function () { if (!decided && !read() && box.hidden) show(false); };
+      // Ask once per visit, after the loading screen. If the visitor ignores it, stay quiet on other pages
+      // and ask again only on the Contact page, where they are about to send personal details.
+      var SEEN = "mad-consent-seen";
+      var onContact = /^\/contact(\.html)?\/?$/.test(location.pathname);
+      var seen = false;
+      try { seen = !!sessionStorage.getItem(SEEN); } catch (e) {}
+      var go = function () {
+        if (decided || read() || !box.hidden) return;
+        try { sessionStorage.setItem(SEEN, "1"); } catch (e) {}
+        show(false);
+      };
+      if (seen && !onContact) return;
       Promise.resolve(window.__preloaded).then(function () { later(go, 900); });
       later(go, 8000);
     }
