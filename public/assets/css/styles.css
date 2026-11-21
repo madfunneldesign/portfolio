@@ -5126,6 +5126,9 @@ html.reveal-fallback .preloader {
 .consent.is-in {
   transform: none;
 }
+body {
+  padding-bottom: var(--consent-h, 0px);
+}
 .consent-in {
   max-width: 1440px;
   margin: 0 auto;
@@ -5274,13 +5277,19 @@ html.reveal-fallback .preloader {
   outline-offset: 3px;
 }
 @media (max-width: 860px) {
+  .consent-in {
+    padding-top: 16px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
   .consent-main {
     flex-direction: column;
     align-items: stretch;
-    gap: 16px;
+    gap: 12px;
   }
   .consent-text {
     max-width: none;
+    font-size: 0.875rem;
+    line-height: 1.5;
   }
   .consent-actions {
     display: grid;

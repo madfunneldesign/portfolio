@@ -75,6 +75,9 @@
     // A saved choice that is no longer valid (expired or older version): forget it and remove tracker cookies from it.
     if (!choice && localStorage.getItem(KEY)) { localStorage.removeItem(KEY); clearTrackerCookies(); }
   } catch (e) {}
+  // Global Privacy Control (a browser setting that says "do not sell or share my data") counts as Refuse, so the bar does not ask.
+  // The visitor can still opt in later with "Cookie settings" in the footer.
+  if (!choice && navigator.globalPrivacyControl === true) { write({ a: 0, m: 0 }); choice = read(); }
   if (choice && (choice.a || choice.m)) {
     ["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (t) {
       window.addEventListener(t, startAllowed, { once: true, passive: true });
@@ -134,6 +137,27 @@
       var c = { a: 0, m: 0 };
       Array.prototype.forEach.call(boxes, function (b) { c[b.getAttribute("data-cat")] = b.checked ? 1 : 0; });
       save(c);
+    });
+    // While the bar is open, keep the end of the page scrollable above it (so it never hides the form or footer links).
+    if (window.ResizeObserver) {
+      new ResizeObserver(function () {
+        document.documentElement.style.setProperty("--consent-h", box.hidden ? "0px" : box.offsetHeight + "px");
+      }).observe(box);
+    }
+    // A choice made in another tab of this browser applies here too.
+    window.addEventListener("storage", function (e) {
+      if (e.key !== KEY || !e.newValue) return;
+      var c = read();
+      if (!c) return;
+      decided = true;
+      stopTimers();
+      hide();
+      if ((started.a && !c.a) || (started.m && !c.m)) {
+        clearTrackerCookies();
+        location.replace(location.href);
+        return;
+      }
+      startAllowed();
     });
     Array.prototype.forEach.call(document.querySelectorAll("[data-consent-open]"), function (el) {
       el.addEventListener("click", function () { show(true); });
