@@ -10,7 +10,7 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const { bodyClass = "", current = "", home = "/", ball = false, noPre = false, shortName = false } = Astro.props;
+const { bodyClass = "", current = "", home = "/", ball = false, noPre = false } = Astro.props;
 
 // Script and style files get "?v=<fingerprint of the file>" so the browser can keep them for a year and still fetch a changed file at once.
 const v = (file) => {
@@ -73,7 +73,7 @@ const v = (file) => {
     <slot />
   </main>
 
-  <Footer home={home} shortName={shortName} />
+  <Footer home={home} />
   <Consent />
 
   <!-- Animation libraries and site script are plain files in /public, loaded in the same order as before. -->
