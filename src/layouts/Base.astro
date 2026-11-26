@@ -6,10 +6,23 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Consent from "../components/Consent.astro";
 
-const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+const { bodyClass = "", current = "", home = "/", ball = false, noPre = false } = Astro.props;
+
+// Script and style files get "?v=<fingerprint of the file>" so the browser can keep them for a year and still fetch a changed file at once.
+const v = (file) => {
+  try {
+    return "?v=" + createHash("sha256").update(readFileSync(join(process.cwd(), "public", file))).digest("hex").slice(0, 10);
+  } catch (e) {
+    return "";
+  }
+};
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" data-nopre={noPre ? "" : undefined}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +33,7 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/host-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href={`assets/css/styles.css${v("assets/css/styles.css")}`}>
 
   <!-- Marks the page as JS-enabled so hero text can animate in. If scripts fail, the text shows after 4 seconds. -->
   <script is:inline>
@@ -34,7 +47,7 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
         var fromSite = false;
         try { fromSite = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e2) {}
         var force = /[?&]preloader(=|&|$)/.test(location.search);
-        if (matchMedia("(prefers-reduced-motion: reduce)").matches || (!force && ((fromSite && !reloaded) || location.hash))) {
+        if (document.documentElement.hasAttribute("data-nopre") || matchMedia("(prefers-reduced-motion: reduce)").matches || (!force && ((fromSite && !reloaded) || location.hash))) {
           document.documentElement.classList.add("no-pre");
         }
       } catch (e) {
@@ -50,7 +63,7 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
 
   <!-- Cookie choice and analytics (Google tag, Microsoft Clarity, Meta Pixel). Nothing loads until the visitor allows it; after that it starts
        on the first touch, scroll or key press, or 5 seconds after load, so it does not compete with the first paint. -->
-  <script is:inline defer src="assets/js/consent.js"></script>
+  <script is:inline defer src={`assets/js/consent.js${v("assets/js/consent.js")}`}></script>
 </head>
 <body class={bodyClass || undefined}>
   <Preloader />
@@ -64,11 +77,11 @@ const { bodyClass = "", current = "", home = "/", ball = false } = Astro.props;
   <Consent />
 
   <!-- Animation libraries and site script are plain files in /public, loaded in the same order as before. -->
-  <script is:inline defer src="assets/vendor/gsap.min.js"></script>
-  <script is:inline defer src="assets/vendor/ScrollTrigger.min.js"></script>
-  <script is:inline defer src="assets/vendor/SplitText.min.js"></script>
-  <script is:inline defer src="assets/vendor/lenis.min.js"></script>
-  {ball && <script is:inline defer src="assets/js/crystalized-ball.js"></script>}
-  <script is:inline defer src="assets/js/main.js"></script>
+  <script is:inline defer src={`assets/vendor/gsap.min.js${v("assets/vendor/gsap.min.js")}`}></script>
+  <script is:inline defer src={`assets/vendor/ScrollTrigger.min.js${v("assets/vendor/ScrollTrigger.min.js")}`}></script>
+  <script is:inline defer src={`assets/vendor/SplitText.min.js${v("assets/vendor/SplitText.min.js")}`}></script>
+  <script is:inline defer src={`assets/vendor/lenis.min.js${v("assets/vendor/lenis.min.js")}`}></script>
+  {ball && <script is:inline defer src={`assets/js/crystalized-ball.js${v("assets/js/crystalized-ball.js")}`}></script>}
+  <script is:inline defer src={`assets/js/main.js${v("assets/js/main.js")}`}></script>
 </body>
 </html>

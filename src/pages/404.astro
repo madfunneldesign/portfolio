@@ -1,0 +1,41 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base bodyClass="page-about page-terms page-404" current="" noPre={true}>
+<Fragment slot="meta">
+  <!-- A missing page can be reached from any address, so links and files are read from the site root. -->
+  <base href="/">
+  <title>Page not found | MAD Funnel Design</title>
+  <meta name="description" content="This page does not exist. Go back to the MAD Funnel Design services, projects or contact page.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1C1C1C">
+</Fragment>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="i-down-right" viewBox="0 0 24 24"><path d="M5 5l13 13M18 8v10H8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </svg>
+
+    <section class="hero hero-about hero-services hero-legal" aria-labelledby="nf-title">
+      <span class="hbar hbar-1" aria-hidden="true"></span>
+      <span class="hbar hbar-2" aria-hidden="true"></span>
+      <span class="hbar hbar-3" aria-hidden="true"></span>
+      <span class="hbar hbar-4" aria-hidden="true"></span>
+
+      <div class="ah-copy">
+        <p class="ah-label" data-reveal>Error 404</p>
+        <h1 id="nf-title">
+          <span class="line">That page</span>
+          <span class="line">isn&rsquo;t here.</span>
+        </h1>
+        <p class="ah-intro" data-reveal>The link may be old or mistyped. These pages will get you back on track.</p>
+      </div>
+
+      <nav class="svc-index" aria-label="Where to go next">
+        <ol>
+          <li data-reveal><a href="/services"><span class="si-n">See</span><span class="si-t">Services</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+          <li data-reveal><a href="/projects"><span class="si-n">View</span><span class="si-t">Projects</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+          <li data-reveal><a href="/contact"><span class="si-n">Start</span><span class="si-t">Contact</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+          <li data-reveal><a href="/"><span class="si-n">Go</span><span class="si-t">Home</span><svg width="22" height="22" aria-hidden="true"><use href="#i-down-right"/></svg></a></li>
+        </ol>
+      </nav>
+    </section>
+</Base>

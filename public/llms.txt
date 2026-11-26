@@ -16,9 +16,13 @@
 - Web Systems, from $4,500: custom multi-page architecture for established businesses, advanced GSAP animation, interactive cursor-based experiences, advanced CRM integrations, multi-step automation workflows, customer journey configuration, and technical SEO.
 
 ## Selected projects
-- NICRO spa: a website for a specialist in high-nickel alloy components, covering engineering, prototyping, custom manufacturing and reverse engineering. Role: design and development.
-- Omega: a website for a studio designing contemporary residential interiors, with full-screen imagery and a clear route to request a consultation. Role: design and development.
-- Empire: a website for a residential and commercial construction company, with a full-screen hero and a quote request in the navigation. Role: design and development.
+Concept and demo builds; no client results are claimed. Each has its own case study page.
+- NICRO Industrial: a website for a specialist in high-nickel alloy components, covering engineering, prototyping, custom manufacturing and reverse engineering. Role: design and development.
+- Construction website (Empire): a website for a residential and commercial construction company, with a full-screen hero and a quote request in the navigation. Role: design and development.
+- Interior design website (Omega): a website for a studio designing contemporary residential interiors, with full-screen imagery and a clear route to request a consultation. Role: design and development.
+- Brightwater Legal: a family law website concept with clear paths for separation, divorce and parenting matters. Role: design and development.
+- Clothing e-commerce: an online clothing store concept with a drop-style homepage and a shop flow. Role: design and development.
+- Black Chauffeur: a chauffeur service website concept built around a booking call to action. Role: design and development.
 
 ## Process
 1. Understand the Requirements: We start by discussing your business, services, target audience, project goals, and technical requirements. This gives the project a clear direction before design and development begin.
@@ -98,7 +102,7 @@ Custom HTML, CSS and JavaScript with GSAP animation and Lenis smooth scrolling. 
 - Facebook: https://www.facebook.com/AldrichMatthewDomingoOfficial/
 
 ## Contact
-Use the contact form at https://www.madfunneldesign.com/#contact (name, email, business, website, project type, budget, start date and a description), email madfunneldesign@gmail.com, or book a free 15-minute call: https://calendly.com/-aldrichmatthew/15mins
+Use the contact form at https://www.madfunneldesign.com/contact (name, email, business, website, project type, budget, start date and a description), email madfunneldesign@gmail.com, or book a free 15-minute call: https://calendly.com/-aldrichmatthew/15mins
 
 ## Pages
 
