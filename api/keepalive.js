@@ -16,8 +16,14 @@ export default async function handler(req, res) {
   const cron = process.env.CRON_SECRET;
   const supabaseUrl = (process.env.SUPABASE_URL || "").replace(/\/$/, "");
   const serviceKey = process.env.SUPABASE_SERVICE_KEY;
-  if (!cron || !supabaseUrl || !serviceKey) return res.status(503).json({ error: "not_configured" });
-  if (req.method !== "GET" || !same(req.headers.authorization || "", "Bearer " + cron)) return res.status(401).json({ error: "unauthorized" });
+  if (!cron || !supabaseUrl || !serviceKey) {
+    console.log("keepalive: not configured (missing CRON_SECRET, SUPABASE_URL or SUPABASE_SERVICE_KEY)");
+    return res.status(503).json({ error: "not_configured" });
+  }
+  if (req.method !== "GET" || !same(req.headers.authorization || "", "Bearer " + cron)) {
+    console.log("keepalive: rejected, wrong or missing authorization");
+    return res.status(401).json({ error: "unauthorized" });
+  }
 
   try {
     const r = await fetch(supabaseUrl + "/rest/v1/inquiries?select=id&limit=1", {
@@ -27,9 +33,14 @@ export default async function handler(req, res) {
       ),
       signal: AbortSignal.timeout(10000),
     });
-    if (!r.ok) return res.status(502).json({ error: "supabase_" + r.status });
+    if (!r.ok) {
+      console.log("keepalive: Supabase answered " + r.status);
+      return res.status(502).json({ error: "supabase_" + r.status });
+    }
   } catch {
+    console.log("keepalive: Supabase could not be reached");
     return res.status(502).json({ error: "supabase_unreachable" });
   }
+  console.log("keepalive: ok, Supabase reached");
   return res.status(200).json({ ok: true });
 }
